@@ -3,17 +3,22 @@ require('express-async-errors')
 const express = require('express')
 const connectDB = require('./Database/connectDB')
 const userRoute = require('./Routes/userRoute')
+const authRoute = require('./Routes/authRoutes')
+const errorHandlerMiddleware = require('./Middleware/errorHandler')
 
 const app = express()
 
 //+++++++++++++++++++++++++++++++Middleware++++++++++++++++++++++++++++++++++++++++
 app.use(express.json())
 
-const port = 3000
+const port = 5000
 
 //++++++++++++++++++++++++++++++ Routes ++++++++++++++++++++++++++++++++++++++++++++
 
-app.use('/api/v1/users', userRoute)
+app.use('/api/v1/ecommerce/auth', authRoute)
+app.use('/api/v1/ecommerce/users', userRoute)
+
+app.use(errorHandlerMiddleware)
 
 const start = async () => {
   try {
