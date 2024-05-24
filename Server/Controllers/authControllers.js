@@ -18,11 +18,16 @@ const registerUser = async (req, res) => {
 
 const loginUser = async (req, res) => {
   const { email, password } = req.body
+  if (!email || !password) {
+    throw new customApiError.BadRequestError(
+      'Please enter your email and password'
+    )
+  }
   const user = await User.findOne({ email })
   if (!user) {
     throw new customApiError.UnAuthenticatedError('Invalid Credentials')
   }
-  const isPasswordCorrect = await user.comparepassword(password)
+  const isPasswordCorrect = await user.comparePassword(password)
   if (!isPasswordCorrect) {
     throw new customApiError.UnAuthenticatedError('Invalid Credentials')
   }
