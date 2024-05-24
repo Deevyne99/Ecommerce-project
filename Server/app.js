@@ -5,11 +5,13 @@ const connectDB = require('./Database/connectDB')
 const userRoute = require('./Routes/userRoute')
 const authRoute = require('./Routes/authRoutes')
 const errorHandlerMiddleware = require('./Middleware/errorHandler')
+const cookieParser = require('cookie-parser')
 
 const app = express()
 
 //+++++++++++++++++++++++++++++++Middleware++++++++++++++++++++++++++++++++++++++++
 app.use(express.json())
+app.use(cookieParser(process.env.JWT_LIFETIME))
 
 const port = 5000
 
