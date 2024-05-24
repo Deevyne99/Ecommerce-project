@@ -8,7 +8,7 @@ const AuthenticateUSer = (req, res, next) => {
   }
 
   try {
-    const { user, userId, role } = verifyToken(token)
+    const { user, userId, role } = verifyToken({ token })
     req.user = { user, userId, role }
     next()
   } catch (error) {
