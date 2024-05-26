@@ -2,6 +2,7 @@ const Reviews = require('../Models/Reviews')
 const customApiError = require('../Errors')
 const { StatusCodes } = require('http-status-codes')
 const Products = require('../Models/products')
+const { checkPermission } = require('../Utils')
 
 const createReview = async (req, res) => {
   const { product: productId } = req.body
@@ -37,15 +38,44 @@ const getAllReviews = async (req, res) => {
 }
 
 const getSingleReview = async (req, res) => {
-  res.status(StatusCodes.OK).json('Get single Review')
+  const { id: reviewId } = req.params
+  const review = await Reviews.findOne({ _id: reviewId })
+  if (!review) {
+    throw new customApiError.NotFoundError(`No reviews with the Id ${reviewId}`)
+  }
+  res.status(StatusCodes.OK).json({ review })
 }
 
 const updateReview = async (req, res) => {
-  res.status(StatusCodes.OK).json('Update review')
+  const { id: reviewId } = req.params
+  const { rating, title, comment } = req.body
+  const review = await Reviews.findOne({ _id: reviewId })
+  if (!review) {
+    throw new customApiError.NotFoundError(`No reviews with the Id ${reviewId}`)
+  }
+  checkPermission(req.user, review.user)
+
+  review.rating = rating
+  review.title = title
+  review.comment = comment
+
+  await review.save()
+
+  res.status(StatusCodes.OK).json({ review })
 }
 
 const deleteReview = async (req, res) => {
-  res.status(StatusCodes.OK).json('delete Review')
+  const { id: reviewId } = req.params
+
+  const review = await Reviews.findOne({ _id: reviewId })
+  if (!review) {
+    throw new customApiError.NotFoundError(`No reviews with the Id ${reviewId}`)
+  }
+  checkPermission(req.user, review.user)
+
+  await review.remove()
+
+  res.status(StatusCodes.OK).json({ message: 'Deleted successfully' })
 }
 
 module.exports = {
