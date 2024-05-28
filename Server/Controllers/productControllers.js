@@ -47,13 +47,13 @@ const updateProduct = async (req, res) => {
 
 const deleteProduct = async (req, res) => {
   const { id: productId } = req.params
-  const product = await Products.findOne({ _id: productId })
+  const product = await Products.findOneAndDelete({ _id: productId })
   if (!product) {
     throw new customApiError.NotFoundError(
       `product with the id ${productId} does not exist`
     )
   }
-  await product.remove()
+  // await product.remove()
   res.status(StatusCodes.OK).json({ success: true, product })
 }
 
