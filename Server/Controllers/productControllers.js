@@ -17,13 +17,12 @@ const createProducts = async (req, res) => {
 
 const getSingleProduct = async (req, res) => {
   const { id: productId } = req.params
-  const product = await Products.findOne({ _id: productId })
+  const product = await Products.findOne({ _id: productId }).populate('reviews')
   if (!product) {
     throw new customApiError.NotFoundError(
       `product with the id ${productId} does not exist`
     )
   }
-
   res.status(StatusCodes.OK).json({ success: true, product })
 }
 
