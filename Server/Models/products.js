@@ -76,4 +76,11 @@ ProductSchema.virtual('reviews', {
   justOne: false,
 })
 
+ProductSchema.pre('findOneAndDelete', async function (next) {
+  const product = await this.model.findOne(this.getFilter())
+  if (product) {
+    await mongoose.model('Reviews').deleteMany({ product: product._id })
+  }
+})
+
 module.exports = mongoose.model('Products', ProductSchema)
