@@ -72,8 +72,7 @@ const deleteReview = async (req, res) => {
     throw new customApiError.NotFoundError(`No reviews with the Id ${reviewId}`)
   }
   checkPermission(req.user, review.user)
-
-  await review.remove()
+  await Reviews.findOneAndDelete({ _id: reviewId })
 
   res.status(StatusCodes.OK).json({ message: 'Deleted successfully' })
 }

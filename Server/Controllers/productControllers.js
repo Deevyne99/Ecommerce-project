@@ -3,7 +3,7 @@ const Products = require('../Models/products')
 const { StatusCodes } = require('http-status-codes')
 
 const getAllProducts = async (req, res) => {
-  const products = await Products.find({})
+  const products = await Products.find({}).populate('reviews')
   res
     .status(StatusCodes.OK)
     .json({ success: true, products, count: products.length })
@@ -52,7 +52,7 @@ const deleteProduct = async (req, res) => {
       `product with the id ${productId} does not exist`
     )
   }
-  // await product.remove()
+  //  await product.remove()
   res.status(StatusCodes.OK).json({ success: true, product })
 }
 
