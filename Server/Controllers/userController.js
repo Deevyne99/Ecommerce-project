@@ -8,14 +8,14 @@ const {
 } = require('../Utils')
 
 const getAllUsers = async (req, res) => {
-  const users = await User.find({})
+  const users = await User.find({}).select('-password')
 
   res.status(StatusCodes.OK).json({ success: true, users })
 }
 
 const getSingleUser = async (req, res) => {
   const { id: userId } = req.params
-  const user = await User.findOne({ _id: userId })
+  const user = await User.findOne({ _id: userId }).select('-password')
   if (!user) {
     throw new customApiError.NotFoundError(`No user with the id ${userId}`)
   }
@@ -30,7 +30,7 @@ const showCurrentUser = async (req, res) => {
 }
 
 const updateUser = async (req, res) => {
-  const { id: userId } = req.params
+  const { userId } = req.user
   const { firstName, lastName, email } = req.body
   if (!firstName || !lastName || !email) {
     throw new customApiError.BadRequestError('Please Enter your credentials')
@@ -49,4 +49,21 @@ const updateUser = async (req, res) => {
   res.status(StatusCodes.OK).json({ sucess: true, tokenUser })
 }
 
-module.exports = { getAllUsers, getSingleUser, showCurrentUser, updateUser }
+const deleteUser = async (req, res) => {
+  const { id: userId } = req.params
+  const user = await User.findOneAndDelete({ _id: userId })
+  if (!user) {
+    throw new customApiError.NotFoundError(`No User with the id ${userId}`)
+  }
+  res
+    .status(StatusCodes.OK)
+    .json({ success: true, msg: 'Deleted successfully', user })
+}
+
+module.exports = {
+  getAllUsers,
+  getSingleUser,
+  showCurrentUser,
+  updateUser,
+  deleteUser,
+}
