@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#f5f7fb]; /* Replace with any Tailwind color class */
+  }
+}
