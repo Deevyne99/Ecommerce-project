@@ -12,6 +12,8 @@ const createOrder = async (req, res) => {
       'Please provide tax and shipping Fee'
     )
   }
+
+  let orderItems = []
 }
 
 const getAllOrders = async (req, res) => {
