@@ -4,6 +4,6 @@
 
 @layer base {
   body {
-    @apply bg-[#f5f7fb]; /* Replace with any Tailwind color class */
+    @apply bg-[#fff]; /* Replace with any Tailwind color class */
   }
 }
