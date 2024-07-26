@@ -10,13 +10,13 @@ const Home = () => {
       <div>
         <Hero />
       </div>
-      <div>
+      <div className='my-20'>
         <Features />
       </div>
       <div>
         <Categories />
       </div>
-      <div>
+      <div className='my-20'>
         <Features />
       </div>
     </div>

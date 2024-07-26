@@ -48,13 +48,16 @@ const Hero = () => {
                 alt={title}
                 className='md:h-full h-[300px] w-full  md:w-1/2 object-cover '
               />
-              <div className='flex flex-col gap-2 w-full md:w-1/2 max-w-[600px]'>
+              <div className='flex flex-col items-center justify-center gap-2 w-full md:w-1/2 max-w-[600px]'>
                 <h2 className='font-bold text-2xl text-[#1c0f0f]  md:text-left text-center '>
                   {title}
                 </h2>
-                <p className='md:w-[80%] w-full md:text-left text-center px-4'>
+                <p className='md:w-[80%] w-full md:text-left text-center px-4 md:px-0'>
                   {desc}
                 </p>
+                <button className='capitalize p-2 bg-black text-[#fff] w-[100px]'>
+                  shop
+                </button>
               </div>
             </div>
           )

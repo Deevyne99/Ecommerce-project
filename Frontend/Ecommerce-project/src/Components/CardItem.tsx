@@ -1,28 +1,33 @@
 // import React from 'react'
-import image from '../assets/sale-10.jpg'
+// import image from '../assets/sale-10.jpg'
 interface CardItem {
-  name: string
-  amount: number
+  id: number
+  title: string
   desc: string
   img: string
+  amount: number
 }
 
-const CardItem = () => {
+const CardItem = ({
+  item: { title, amount, desc, img },
+}: {
+  item: CardItem
+}) => {
   return (
-    <div className='flex flex-col h-[270px] w-full md:w-[200px]'>
-      <div className='h-[250px] w-full md:w-[200px]'>
+    <div className='flex flex-col h-[300px] md:h-[280px] w-full md:w-[210px] '>
+      <div className='h-[250px] w-full md:w-[210px] '>
         <img
-          src={image}
+          src={img}
           alt=''
-          className='w-full h-[210px] object-cover object-center'
+          className='w-full h-[250px] md:h-[220px] object-cover object-center'
         />
       </div>
       <div className='flex flex-col '>
-        <div className='flex justify-between mt-2'>
-          <h5>Green Kneat shirt</h5>
-          <h5>$20</h5>
+        <div className='flex justify-between mt-1'>
+          <h5>{title}</h5>
+          <h5>${amount}</h5>
         </div>
-        <p className='text-[14px]'>short description of item</p>
+        <p className='text-[14px]'>{desc}</p>
       </div>
     </div>
   )
