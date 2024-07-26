@@ -2,8 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
 @layer base {
   body {
-    @apply bg-[#f5f7fb]; /* Replace with any Tailwind color class */
+    @apply bg-[#fff]; /* Replace with any Tailwind color class */
   }
 }
