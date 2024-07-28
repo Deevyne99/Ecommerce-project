@@ -1,5 +1,6 @@
 import Categories from '../Components/Categories'
 import Features from '../Components/Features'
+import Footer from '../Components/Footer'
 import Hero from '../Components/Hero'
 
 // import React from 'react'
@@ -18,6 +19,10 @@ const Home = () => {
       </div>
       <div className='my-20'>
         <Features />
+      </div>
+
+      <div>
+        <Footer />
       </div>
     </div>
   )

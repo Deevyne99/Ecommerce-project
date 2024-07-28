@@ -17,9 +17,9 @@ const CategoryItem = ({
   item: CategoryItem
 }) => {
   return (
-    <div className='w-[200px] h-[320px] flex-shrink-0'>
+    <div className='w-[200px] h-[320px] flex-shrink-0 '>
       <div className='w-[200px] h-[280px]'>
-        <img src={img} alt='' className='h-full w-full object-cover' />
+        <img src={img} alt='' className='h-full w-full object-cover ' />
       </div>
       <div className='mt-1'>
         <h1>{title}</h1>

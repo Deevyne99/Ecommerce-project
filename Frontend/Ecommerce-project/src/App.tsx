@@ -3,6 +3,8 @@ import Navbar from './Components/Navbar/Navbar'
 import Home from './Pages/Home'
 import Products from './Pages/Products'
 import About from './Pages/About'
+// import Footer from './Components/Footer'
+
 function App() {
   return (
     <div>

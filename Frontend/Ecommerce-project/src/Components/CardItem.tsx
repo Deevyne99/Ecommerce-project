@@ -19,7 +19,7 @@ const CardItem = ({
         <img
           src={img}
           alt=''
-          className='w-full h-[250px] md:h-[220px] object-cover object-center'
+          className='w-full h-[250px] md:h-[220px] object-cover object-center    rounded-md'
         />
       </div>
       <div className='flex flex-col '>
