@@ -133,3 +133,17 @@ export const data = [
     images: ['/assets/sale-2.jpg', '/assets/sale-3.jpg'],
   },
 ]
+
+export const singleProduct = {
+  id: 1,
+  img: '/assets/sale-1.jpg',
+  title: 'Mens T-shirt',
+  desc: 'Lorem ipsum dolor ',
+  amount: 20,
+  images: [
+    '/assets/sale-6.jpg',
+    '/assets/sale-2.jpg',
+    '/assets/sale-8.jpg',
+    '/assets/sale-3.jpg',
+  ],
+}
