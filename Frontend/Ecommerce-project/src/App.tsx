@@ -3,6 +3,10 @@ import Navbar from './Components/Navbar/Navbar'
 import Home from './Pages/Home'
 import Products from './Pages/Products'
 import About from './Pages/About'
+import SingleProduct from './Pages/SingleProduct'
+
+// import Footer from './Components/Footer'
+
 function App() {
   return (
     <div>
@@ -12,6 +16,7 @@ function App() {
             <Route index element={<Home />} />
             <Route path='/products' element={<Products />} />
             <Route path='/about' element={<About />} />
+            <Route path='/product/:id' element={<SingleProduct />} />
           </Route>
         </Routes>
       </BrowserRouter>
