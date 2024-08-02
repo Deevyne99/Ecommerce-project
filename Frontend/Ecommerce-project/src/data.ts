@@ -58,6 +58,7 @@ export const data = [
     title: 'Mens T-shirt',
     desc: 'Lorem ipsum dolor ',
     amount: 20,
+    images: ['/assets/sale-6.jpg', '/assets/sale-2.jpg'],
   },
   {
     id: 2,
@@ -65,6 +66,7 @@ export const data = [
     title: 'Mens T-shirt',
     desc: 'Lorem ipsum dolor ',
     amount: 20,
+    images: ['/assets/sale-3.jpg', '/assets/sale-2.jpg'],
   },
   {
     id: 3,
@@ -72,6 +74,7 @@ export const data = [
     title: 'Mens T-shirt',
     desc: 'Lorem ipsum ',
     amount: 20,
+    images: ['/assets/sale-2.jpg', '/assets/sale-5.jpg'],
   },
   {
     id: 4,
@@ -79,6 +82,7 @@ export const data = [
     title: 'Mens T-shirt',
     desc: 'Lorem ipsum ',
     amount: 20,
+    images: ['/assets/sale-1.jpg', '/assets/sale-4.jpg'],
   },
   {
     id: 5,
@@ -86,6 +90,7 @@ export const data = [
     title: 'Solar Installation',
     desc: 'Lorem ipsum ',
     amount: 20,
+    images: ['/assets/sale-2.jpg', '/assets/sale-3.jpg'],
   },
   {
     id: 6,
@@ -93,6 +98,7 @@ export const data = [
     title: 'Mens T-shirt',
     desc: 'Lorem ipsum dolor ',
     amount: 20,
+    images: ['/assets/sale-1.jpg', '/assets/sale-2.jpg'],
   },
   {
     id: 7,
@@ -100,6 +106,7 @@ export const data = [
     title: 'Mens T-shirt',
     desc: 'Lorem ipsum ',
     amount: 20,
+    images: ['/assets/sale-3.jpg', '/assets/sale-2.jpg'],
   },
   {
     id: 8,
@@ -107,6 +114,7 @@ export const data = [
     title: 'Mens T-shirt',
     desc: 'Lorem ipsum dolor ',
     amount: 20,
+    images: ['/assets/sale-2.jpg', '/assets/sale-3.jpg'],
   },
   {
     id: 9,
@@ -114,6 +122,7 @@ export const data = [
     title: 'Mens T-shirt',
     desc: 'Lorem ipsum dolor ',
     amount: 20,
+    images: ['/assets/sale-2.jpg', '/assets/sale-3.jpg'],
   },
   {
     id: 10,
@@ -121,5 +130,6 @@ export const data = [
     title: 'Mens T-shirt',
     desc: 'Lorem ipsum dolor ',
     amount: 20,
+    images: ['/assets/sale-2.jpg', '/assets/sale-3.jpg'],
   },
 ]
