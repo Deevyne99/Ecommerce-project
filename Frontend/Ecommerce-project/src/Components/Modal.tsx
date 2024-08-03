@@ -9,7 +9,7 @@ const Modal: React.FC<ModalProps> = ({ openModal, children }) => {
     <div
       className={`${
         openModal
-          ? 'flex  fixed h-full z-40 w-full bg-[#000] bg-opacity-5 backdrop-blur-sm'
+          ? 'flex  fixed h-full z-40 w-full bg-[#000] bg-opacity-25 backdrop-blur-sm'
           : null
       }`}
     >

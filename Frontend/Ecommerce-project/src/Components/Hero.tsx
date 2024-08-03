@@ -52,10 +52,10 @@ const Hero = () => {
                 <h2 className='font-bold text-2xl text-[#1c0f0f]  md:text-left text-center '>
                   {title}
                 </h2>
-                <p className='md:w-[80%] w-full md:text-left text-center px-4 md:px-0'>
+                <p className='md:w-[80%] w-full text-center text-[#6b7280] text-[15px] px-4 md:px-0'>
                   {desc}
                 </p>
-                <button className='capitalize p-2 bg-black text-[#fff] w-[100px]'>
+                <button className='capitalize mt-2 p-2 bg-[#3b82f6] text-[#fff] w-[100px]'>
                   shop
                 </button>
               </div>

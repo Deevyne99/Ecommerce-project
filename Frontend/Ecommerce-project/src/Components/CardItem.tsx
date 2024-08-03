@@ -32,11 +32,11 @@ const CardItem = ({
         />
       </Link>
       <div className='flex flex-col'>
-        <div className='flex justify-between mt-1'>
+        <div className='flex justify-between mt-1 text-sm text-[#6b7280]'>
           <h5>{title}</h5>
           <h5>${amount}</h5>
         </div>
-        <p className='text-[14px]'>{desc}</p>
+        <p className='text-sm text-[#6b7280]'>{desc}</p>
       </div>
     </div>
   )

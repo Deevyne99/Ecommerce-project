@@ -9,17 +9,17 @@ import {
 
 const Footer = () => {
   return (
-    <section className='py-12 bg-[#c7d2fe] flex flex-col'>
+    <section className='py-12 text-white bg-[#3b82f6] flex flex-col'>
       <div className=' justify-between  gap-8 flex flex-wrap mx-4 md:mx-12'>
         <div className='gap-4 flex flex-col '>
-          <h4 className='text-2xl'>Logo</h4>
+          <h4 className='text-2xl capitalize'>Logo</h4>
           <div className='flex flex-col gap-4 mt-4'>
-            <p className='max-w-[400px]'>
+            <p className='max-w-[400px] text-sm'>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet
               assumenda unde optio et numquam magnam!
             </p>
-            <p>kaludivine@gmail.com</p>
-            <p>+2348148158802</p>
+            <p className='text-sm'>kaludivine@gmail.com</p>
+            <p className='text-sm'>+2348148158802</p>
             <div className='flex gap-2'>
               <FaTwitter />
               <FaFacebook />
@@ -31,49 +31,69 @@ const Footer = () => {
         <div>
           <h4 className='text-2xl'>Logo</h4>
           <ul className='flex flex-col gap-4 mt-4'>
-            <Link to={'/'} className='capitalize '>
+            <Link to={'/'} className='capitalize text-sm'>
               Home
             </Link>
-            <Link to={'/about'}>About</Link>
-            <Link to={'/products'}>Products</Link>
-            <Link to={'/orders'}>Orders</Link>
+            <Link to={'/about'} className='capitalize text-sm'>
+              About
+            </Link>
+            <Link to={'/products'} className='capitalize text-sm'>
+              Products
+            </Link>
+            <Link to={'/orders'} className='capitalize text-sm'>
+              Orders
+            </Link>
           </ul>
         </div>
         <div>
           <h4 className='text-2xl'>Logo</h4>
           <ul className='flex flex-col gap-4 mt-4'>
-            <Link to={'/'} className='capitalize '>
+            <Link to={'/'} className='capitalize text-sm'>
               Home
             </Link>
-            <Link to={'/about'}>About</Link>
-            <Link to={'/products'}>Products</Link>
-            <Link to={'/orders'}>Orders</Link>
+            <Link to={'/about'} className='capitalize text-sm'>
+              About
+            </Link>
+            <Link to={'/products'} className='capitalize text-sm'>
+              Products
+            </Link>
+            <Link to={'/orders'} className='capitalize text-sm'>
+              Orders
+            </Link>
           </ul>
         </div>
         <div>
           <h4 className='text-2xl'>Logo</h4>
           <ul className='flex flex-col gap-4 mt-4'>
-            <Link to={'/'} className='capitalize '>
+            <Link to={'/'} className='capitalize text-sm'>
               Home
             </Link>
-            <Link to={'/about'}>About</Link>
-            <Link to={'/products'}>Products</Link>
-            <Link to={'/orders'}>Orders</Link>
+            <Link to={'/about'} className='capitalize text-sm'>
+              About
+            </Link>
+            <Link to={'/products'} className='capitalize text-sm'>
+              Products
+            </Link>
+            <Link to={'/orders'} className='capitalize text-sm'>
+              Orders
+            </Link>
           </ul>
         </div>
         <div className='gap-4 flex flex-col '>
           <h4 className='text-2xl'>Subscribe</h4>
           <div className='flex flex-col gap-4 mt-4'>
-            <p className='max-w-[400px]'>
+            <p className='max-w-[400px] text-sm'>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet
               assumenda unde optio et numquam magnam!
             </p>
             <div>
               <input type='text' className='p-2' />
-              <button className='bg-[#7dd3fc] p-2'>Enter</button>
+              <button className='border bg-[#3b82f6] p-2 border-white'>
+                Enter
+              </button>
             </div>
-            <p>kaludivine@gmail.com</p>
-            <p>+2348148158802</p>
+            <p className='text-sm'>kaludivine@gmail.com</p>
+            <p className='text-sm'>+2348148158802</p>
             <div className='flex gap-2'></div>
           </div>
         </div>

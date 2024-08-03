@@ -16,7 +16,7 @@ const SideBar: React.FC<SideBarProps> = ({
   return (
     <Modal openModal={openSideBar}>
       <aside
-        className={` transition-transform ease-out duration-300 fixed top-0 right-0  p-4 gap-6 flex flex-col bg-white h-full max-w-[450px] w-[85%] overflow-y-scroll ${
+        className={` transition-transform ease-out duration-300 fixed top-0 right-0 z-50 p-4 gap-6 flex flex-col bg-white h-full max-w-[450px] w-[85%] overflow-y-scroll ${
           openSideBar ? '    translate-x-0 ' : 'translate-x-full '
         }`}
       >
