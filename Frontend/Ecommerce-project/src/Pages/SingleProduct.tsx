@@ -47,7 +47,7 @@ const SingleProduct = () => {
               adipisci ipsam neque magni minus officiis! Velit fugiat libero
               iusto maxime voluptate!
             </p>
-            <p className='text-lg text-[#1c0f0f]'>$120</p>
+            <p className='text-lg text-[#3b82f6] font-bold'>$120</p>
             <div className='mt-6 flex gap-2'>
               <button className='bg-slate-200 w-[30px] h-[30px] flex justify-center  items-center p-1'>
                 +

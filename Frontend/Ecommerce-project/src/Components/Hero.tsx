@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { products } from '../data'
+import { Link } from 'react-router-dom'
 
 const Hero = () => {
   // const [items, setItems] = useState(products)
@@ -55,9 +56,12 @@ const Hero = () => {
                 <p className='md:w-[80%] w-full text-center text-[#6b7280] text-[15px] px-4 md:px-0 leading-8'>
                   {desc}
                 </p>
-                <button className='capitalize mt-2 p-2 bg-[#3b82f6] text-[#fff] w-[100px]'>
+                <Link
+                  to={`/product/${id}`}
+                  className='capitalize text-center mt-2 p-2 bg-[#3b82f6] text-[#fff] w-[100px]'
+                >
                   shop
-                </button>
+                </Link>
               </div>
             </div>
           )
