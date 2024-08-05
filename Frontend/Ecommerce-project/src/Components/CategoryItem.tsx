@@ -1,5 +1,7 @@
 // CategoryItem.js
 
+import { Link } from 'react-router-dom'
+
 // import image from '../assets/sale-8.jpg'
 // import { products } from '../data'
 interface CategoryItem {
@@ -12,9 +14,9 @@ interface CategoryItem {
 const CategoryItem = ({ item: { title, img } }: { item: CategoryItem }) => {
   return (
     <div className='w-[200px] h-[320px] flex-shrink-0 '>
-      <div className='w-[200px] h-[280px]'>
+      <Link to={'/products'} className='w-[200px] h-[280px]'>
         <img src={img} alt='' className='h-full w-full object-cover ' />
-      </div>
+      </Link>
       <div className='mt-1'>
         <h1>{title}</h1>
       </div>
