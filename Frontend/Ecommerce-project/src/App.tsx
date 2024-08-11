@@ -4,6 +4,9 @@ import Home from './Pages/Home'
 import Products from './Pages/Products'
 import About from './Pages/About'
 import SingleProduct from './Pages/SingleProduct'
+import Register from './Pages/Register'
+import Login from './Pages/Login'
+import ForgotPassword from './Pages/ForgotPassword'
 
 // import Footer from './Components/Footer'
 
@@ -18,6 +21,9 @@ function App() {
             <Route path='/about' element={<About />} />
             <Route path='/product/:id' element={<SingleProduct />} />
           </Route>
+          <Route path='/register' element={<Register />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/forgotPassword' element={<ForgotPassword />} />
         </Routes>
       </BrowserRouter>
     </div>

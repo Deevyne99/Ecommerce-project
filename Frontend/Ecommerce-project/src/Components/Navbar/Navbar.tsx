@@ -23,8 +23,8 @@ const Navbar = () => {
                 </ul>
               </nav>
               <nav className='md:flex gap-4 hidden'>
-                <Link to={'/sign-in'}>sign in</Link>
-                <Link to={'/sign-out'}>sign out</Link>
+                <Link to={'/register'}>register</Link>
+                <Link to={'/login'}>login</Link>
               </nav>
               <button
                 className='flex md:hidden'

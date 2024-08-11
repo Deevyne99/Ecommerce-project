@@ -17,7 +17,7 @@ const Products = () => {
           {/* <div>
           <Features />
         </div> */}
-          <aside className='gap-4  px-4 flex-col md:w-[180px] lg:w-[200px] hidden md:flex'>
+          <aside className='gap-4  px-2 flex-col md:w-[180px] lg:w-[200px] hidden md:flex'>
             <h3>Product Categories</h3>
             <div className='flex gap-3 items-center'>
               <input type='checkbox' name='Pending' id='' />
@@ -74,7 +74,7 @@ const Products = () => {
                 id='salary'
                 min={100}
                 max={2000}
-                className='border-none'
+                className='border-none w-[120px]'
               />
               <p className='text-sm font-normal text-[#6b7280]'>$3,000</p>
             </div>
