@@ -70,14 +70,14 @@ const Hero = () => {
                   alt={title}
                   onLoad={() => handleImageLoad(index)}
                   style={{ display: loaded[index] ? 'block' : 'none' }}
-                  className='object-cover h-full w-full'
+                  className='object-cover h-[300px] md:h-full w-full'
                 />
               </div>
               <div className='flex flex-col items-center justify-center gap-2 w-full md:w-1/2 max-w-[600px]'>
                 <h2 className='font-bold text-2xl text-[#1c0f0f] md:text-left text-center'>
                   {title}
                 </h2>
-                <p className='md:w-[80%] w-full text-center text-[#6b7280] text-[15px] px-4 md:px-0 leading-8'>
+                <p className='md:w-[80%] w-full text-center text-[#6b7280] md:text-[15px] text-sm px-4 md:px-0 leading-8'>
                   {desc}
                 </p>
                 <Link

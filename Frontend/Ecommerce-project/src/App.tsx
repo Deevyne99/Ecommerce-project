@@ -7,6 +7,7 @@ import SingleProduct from './Pages/SingleProduct'
 import Register from './Pages/Register'
 import Login from './Pages/Login'
 import ForgotPassword from './Pages/ForgotPassword'
+import Order from './Pages/Order'
 
 // import Footer from './Components/Footer'
 
@@ -19,6 +20,7 @@ function App() {
             <Route index element={<Home />} />
             <Route path='/products' element={<Products />} />
             <Route path='/about' element={<About />} />
+            <Route path='/orders' element={<Order />} />
             <Route path='/product/:id' element={<SingleProduct />} />
           </Route>
           <Route path='/register' element={<Register />} />
