@@ -1,26 +1,38 @@
-// import { useParams } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { singleProduct } from '../data'
 import Footer from '../Components/Footer'
+import { Blurhash } from 'react-blurhash'
 
 const SingleProduct = () => {
-  // const { id } = useParams()
-  // const { img, images, title, amount, id, desc } = singleProduct
   const [imgUrl, setImgUrl] = useState(singleProduct.img)
+  const [isLoading, setIsLoading] = useState(true)
   const [colors, setColors] = useState(['red', 'black', 'blue', 'orange'])
+
+  useEffect(() => {
+    const img = new Image()
+    img.src = imgUrl
+    img.onload = () => setIsLoading(false)
+  }, [imgUrl])
+
   return (
-    <div className=' mt-24'>
+    <div className='mt-24'>
       <div className='flex flex-col mx-4 md:mx-12'>
         <div className='flex w-full gap-8 md:flex-row flex-col'>
           <div className='flex flex-col w-full sm:flex-row gap-4'>
-            <aside className='flex flex-row flex-wrap   sm:flex-col gap-4 sm:order-1 order-2 justify-center'>
+            <aside className='flex flex-row flex-wrap sm:flex-col gap-4 sm:order-1 order-2 justify-center'>
               {singleProduct.images.map((item, index) => {
                 return (
                   <div
                     key={index}
                     className='w-[100px] h-[100px] hover:cursor-pointer'
-                    onMouseEnter={() => setImgUrl(item)}
-                    onMouseLeave={() => setImgUrl(singleProduct.img)}
+                    onMouseEnter={() => {
+                      setIsLoading(true)
+                      setImgUrl(item)
+                    }}
+                    onMouseLeave={() => {
+                      setIsLoading(true)
+                      setImgUrl(singleProduct.img)
+                    }}
                   >
                     <img
                       src={item}
@@ -31,11 +43,25 @@ const SingleProduct = () => {
                 )
               })}
             </aside>
-            <div className='h-[250px] sm:h-[450px] w-full  order-1 md:order-2'>
+            <div className='h-[250px] sm:h-[450px] w-full order-1 md:order-2 relative'>
+              {isLoading && (
+                <Blurhash
+                  hash={singleProduct.blurhash} // Add the corresponding blurhash here
+                  width={'100%'}
+                  height={'100%'}
+                  resolutionX={32}
+                  resolutionY={32}
+                  punch={1}
+                  className='absolute top-0 left-0 w-full h-full object-cover object-center rounded-md'
+                />
+              )}
               <img
                 src={imgUrl}
                 alt=''
-                className='w-full h-full object-cover object-center rounded-md'
+                onLoad={() => setIsLoading(false)}
+                className={`w-full h-full object-cover object-center rounded-md ${
+                  isLoading ? 'hidden' : 'block'
+                }`}
               />
             </div>
           </div>
@@ -49,11 +75,11 @@ const SingleProduct = () => {
             </p>
             <p className='text-lg text-[#3b82f6] font-bold'>$120</p>
             <div className='mt-6 flex gap-2'>
-              <button className='bg-slate-200 w-[30px] h-[30px] flex justify-center  items-center p-1'>
+              <button className='bg-slate-200 w-[30px] h-[30px] flex justify-center items-center p-1'>
                 +
               </button>
               <p className='flex justify-center items-center'>1</p>
-              <button className='bg-slate-200 w-[30px] h-[30px] flex justify-center  items-center p-1'>
+              <button className='bg-slate-200 w-[30px] h-[30px] flex justify-center items-center p-1'>
                 -
               </button>
             </div>

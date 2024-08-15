@@ -29,7 +29,7 @@ const TableComponent = () => {
             </tr>
           </thead>
           <tbody>
-            <tr className='border-t text-sm text-[#6b7280]'>
+            <tr className='border-t text-sm text-[#6b7280] hover:bg-[#fafaf9]'>
               <td className='p-4'>1</td>
               <td className='p-4'>ORD12345</td>
               <td className='p-4'>Bags</td>

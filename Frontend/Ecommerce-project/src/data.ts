@@ -164,4 +164,5 @@ export const singleProduct = {
     '/assets/sale-8.jpg',
     '/assets/sale-3.jpg',
   ],
+  blurhash: 'LFBNTi9EJCIUu6xuD$xvM_tSVWjE',
 }
