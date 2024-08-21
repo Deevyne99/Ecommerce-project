@@ -67,6 +67,7 @@ export const data = [
     desc: 'Lorem ipsum dolor ',
     amount: 20,
     images: ['/assets/sale-6.jpg', '/assets/sale-2.jpg'],
+    blurhash: 'L6BDyi?F009a00H??wtSlVp0m+w^',
   },
   {
     id: 2,
@@ -75,6 +76,7 @@ export const data = [
     desc: 'Lorem ipsum dolor ',
     amount: 20,
     images: ['/assets/sale-3.jpg', '/assets/sale-2.jpg'],
+    blurhash: 'LZKw?}?a.7V@~pIUV[WVxutQRQay',
   },
   {
     id: 3,
@@ -83,6 +85,7 @@ export const data = [
     desc: 'Lorem ipsum ',
     amount: 20,
     images: ['/assets/sale-2.jpg', '/assets/sale-5.jpg'],
+    blurhash: 'L8GSGoIUIB00Ot00WY~V9FX8-p?a',
   },
   {
     id: 4,
@@ -91,6 +94,7 @@ export const data = [
     desc: 'Lorem ipsum ',
     amount: 20,
     images: ['/assets/sale-1.jpg', '/assets/sale-4.jpg'],
+    blurhash: 'LFBNTi9EJCIUu6xuD$xvM_tSVWjE',
   },
   {
     id: 5,
@@ -99,6 +103,7 @@ export const data = [
     desc: 'Lorem ipsum ',
     amount: 20,
     images: ['/assets/sale-2.jpg', '/assets/sale-3.jpg'],
+    blurhash: 'L6O|U,00XSoz00aLIT?v_NkERORP',
   },
   {
     id: 6,
@@ -107,6 +112,7 @@ export const data = [
     desc: 'Lorem ipsum dolor ',
     amount: 20,
     images: ['/assets/sale-1.jpg', '/assets/sale-2.jpg'],
+    blurhash: 'LFBNTi9EJCIUu6xuD$xvM_tSVWjE',
   },
   {
     id: 7,
@@ -115,6 +121,7 @@ export const data = [
     desc: 'Lorem ipsum ',
     amount: 20,
     images: ['/assets/sale-3.jpg', '/assets/sale-2.jpg'],
+    blurhash: 'LFBNTi9EJCIUu6xuD$xvM_tSVWjE',
   },
   {
     id: 8,
@@ -123,6 +130,7 @@ export const data = [
     desc: 'Lorem ipsum dolor ',
     amount: 20,
     images: ['/assets/sale-2.jpg', '/assets/sale-3.jpg'],
+    blurhash: 'LFBNTi9EJCIUu6xuD$xvM_tSVWjE',
   },
   {
     id: 9,
@@ -131,6 +139,7 @@ export const data = [
     desc: 'Lorem ipsum dolor ',
     amount: 20,
     images: ['/assets/sale-2.jpg', '/assets/sale-3.jpg'],
+    blurhash: 'LFBNTi9EJCIUu6xuD$xvM_tSVWjE',
   },
   {
     id: 10,
@@ -139,6 +148,7 @@ export const data = [
     desc: 'Lorem ipsum dolor ',
     amount: 20,
     images: ['/assets/sale-2.jpg', '/assets/sale-3.jpg'],
+    blurhash: 'LFBNTi9EJCIUu6xuD$xvM_tSVWjE',
   },
 ]
 
@@ -154,4 +164,5 @@ export const singleProduct = {
     '/assets/sale-8.jpg',
     '/assets/sale-3.jpg',
   ],
+  blurhash: 'LFBNTi9EJCIUu6xuD$xvM_tSVWjE',
 }
