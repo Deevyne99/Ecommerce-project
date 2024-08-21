@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import { Link, Outlet } from 'react-router-dom'
 import { FaBars } from 'react-icons/fa'
 import SideBar from '../SideBar'
+import { TiShoppingCart } from 'react-icons/ti'
+import Cart from '../Cart'
+// import { TiShoppingCart } from 'react-icons/ti'
 const Navbar = () => {
   const [openSideBar, setSideBar] = useState(false)
   const handleOpenSideBar = () => setSideBar(!openSideBar)
@@ -10,7 +13,7 @@ const Navbar = () => {
       <div className='flex flex-col'>
         <div className='bg-white shadow-md flex flex-col fixed w-full top-0 left-0  z-20 '>
           <div className='flex flex-col mx-4 md:mx-8 py-4'>
-            <div className='flex justify-between '>
+            <div className='flex justify-between mt-1'>
               <div className=''>
                 <h1>Logo</h1>
               </div>
@@ -22,7 +25,15 @@ const Navbar = () => {
                   <Link to={'orders'}>orders</Link>
                 </ul>
               </nav>
-              <nav className='md:flex gap-4 hidden'>
+              <nav className='md:flex gap-8 hidden items-center justify-center'>
+                <div className=''>
+                  <button className='relative'>
+                    <div className='absolute top-[-18px] left-[18px] h-[25px] w-[25px] flex justify-center items-center text-sm rounded-[50%] text-white bg-[#3b82f6]'>
+                      1
+                    </div>
+                    <TiShoppingCart className='text-2xl' />
+                  </button>
+                </div>
                 <Link to={'/register'}>register</Link>
                 <Link to={'/login'}>login</Link>
               </nav>
@@ -40,6 +51,9 @@ const Navbar = () => {
             openSideBar={openSideBar}
             handleOpenSideBar={handleOpenSideBar}
           />
+        </div>
+        <div>
+          <Cart />
         </div>
         <Outlet />
       </div>

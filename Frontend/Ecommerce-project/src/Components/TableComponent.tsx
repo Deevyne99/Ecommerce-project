@@ -5,10 +5,13 @@ import { useState } from 'react'
 const TableComponent = () => {
   const [status, setStatus] = useState('pending')
   return (
-    <div className='flex flex-col'>
-      <div className='flex justify-between py-3 px-4 border rounded-t-md'>
-        <div className='flex h-[40px] w-[200px] border'>
-          <input type='text' className='w-full h-full px-1 rounded-md' />
+    <div className='flex flex-col bg-white shadow-lg rounded-lg'>
+      <div className='flex justify-between py-3 px-4  '>
+        <div className='flex h-[40px] w-[200px] '>
+          <input
+            type='text'
+            className='w-full h-full px-1 rounded-md border-gray-100 border'
+          />
         </div>
         <div className='flex gap-4 capitalize'>
           <button className='capitalize'>filter</button>
@@ -16,9 +19,9 @@ const TableComponent = () => {
         </div>
       </div>
       <div className='overflow-x-auto'>
-        <table className='min-w-full border-collapse border-l border-r '>
+        <table className='min-w-full border-collapse  border-gray-100 '>
           <thead>
-            <tr className='bg-[#fafafa] text-sm text-[#6b7280] font-bold'>
+            <tr className='bg-[#fafafa] border-gray-100 text-sm text-[#6b7280] font-bold'>
               <th className='p-4 text-left '>#</th>
               <th className='p-4 text-left'>Order ID</th>
               <th className='p-4 text-left'>Items</th>
@@ -29,7 +32,7 @@ const TableComponent = () => {
             </tr>
           </thead>
           <tbody>
-            <tr className='border-t text-sm text-[#6b7280] hover:bg-[#fafaf9]'>
+            <tr className=' text-sm text-[#6b7280] hover:bg-[#60a5fa] hover:text-white'>
               <td className='p-4'>1</td>
               <td className='p-4'>ORD12345</td>
               <td className='p-4'>Bags</td>
@@ -49,7 +52,7 @@ const TableComponent = () => {
                 </p>
               </td>
             </tr>
-            <tr className='border-t text-sm text-[#6b7280]'>
+            <tr className='border-t border-gray-100 text-sm text-[#6b7280]'>
               <td className='p-4'>1</td>
               <td className='p-4'>ORD12345</td>
               <td className='p-4'>Bags</td>
@@ -57,7 +60,7 @@ const TableComponent = () => {
               <td className='p-4'>10 Aug 2024</td>
               <td className='p-4'>Successful</td>
             </tr>
-            <tr className='border-t text-sm text-[#6b7280]'>
+            <tr className='border-t border-gray-100 text-sm text-[#6b7280]'>
               <td className='p-4'>1</td>
               <td className='p-4'>ORD12345</td>
               <td className='p-4'>Bags</td>
@@ -65,7 +68,7 @@ const TableComponent = () => {
               <td className='p-4'>10 Aug 2024</td>
               <td className='p-4'>Successful</td>
             </tr>
-            <tr className='border-t text-sm text-[#6b7280]'>
+            <tr className='border-t text-sm border-gray-100 text-[#6b7280]'>
               <td className='p-4'>1</td>
               <td className='p-4'>ORD12345</td>
               <td className='p-4'>Bags</td>
@@ -73,7 +76,7 @@ const TableComponent = () => {
               <td className='p-4'>10 Aug 2024</td>
               <td className='p-4'>Successful</td>
             </tr>
-            <tr className='border-t text-sm text-[#6b7280]'>
+            <tr className='border-t text-sm text-[#6b7280] border-gray-100 '>
               <td className='p-4'>1</td>
               <td className='p-4'>ORD12345</td>
               <td className='p-4'>Bags</td>
@@ -84,7 +87,7 @@ const TableComponent = () => {
             {/* Add more rows as needed */}
           </tbody>
         </table>
-        <div className='flex justify-between  py-3 px-4 border rounded-b-md'>
+        <div className='flex justify-between  py-4 px-4 border-gray-100 border rounded-b-md'>
           <div>
             <p>
               showing <span>10</span> out of <span>256</span>
