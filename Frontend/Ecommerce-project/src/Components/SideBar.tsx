@@ -1,39 +1,66 @@
-import React from 'react'
+// import React from 'react'
 import { Link } from 'react-router-dom'
 import Modal from './Modal'
 import { FiX } from 'react-icons/fi'
+import { useAppSelector, useAppDispatch } from '../hooks/hooks'
+import {
+  handleShowCart,
+  handleShowSideBar,
+} from '../features/modals/modalSlice'
+import { TiShoppingCart } from 'react-icons/ti'
 
-interface SideBarProps {
-  openSideBar: boolean
-  handleOpenSideBar: () => void
-}
-
-const SideBar: React.FC<SideBarProps> = ({
-  openSideBar,
-  handleOpenSideBar,
-}) => {
+const SideBar = () => {
+  const { showSidebar } = useAppSelector((store) => store.modalSlice)
+  const dispatch = useAppDispatch()
   // const [openSideBar, setSideBar] = useState(true)
   return (
-    <Modal openModal={openSideBar}>
+    <Modal openModal={showSidebar}>
       <aside
         className={` transition-transform ease-out duration-300 fixed top-0 right-0 z-50 p-4 gap-6 flex flex-col bg-white h-full max-w-[450px] w-[85%] overflow-y-scroll ${
-          openSideBar ? '    translate-x-0 ' : 'translate-x-full '
+          showSidebar ? '    translate-x-0 ' : 'translate-x-full '
         }`}
       >
-        <button onClick={() => handleOpenSideBar()}>
+        <button onClick={() => dispatch(handleShowSideBar())}>
           <FiX />
         </button>
         <nav>
           <ul className='flex flex-col gap-4 items-left '>
-            <Link to={'/'}>Home</Link>
-            <Link to={'/about'}>about</Link>
-            <Link to={'/products'}>Products</Link>
-            <Link to={'orders'}>orders</Link>
+            <Link onClick={() => dispatch(handleShowSideBar())} to={'/'}>
+              Home
+            </Link>
+            <Link onClick={() => dispatch(handleShowSideBar())} to={'/about'}>
+              about
+            </Link>
+            <Link
+              onClick={() => dispatch(handleShowSideBar())}
+              to={'/products'}
+            >
+              Products
+            </Link>
+            <Link onClick={() => dispatch(handleShowSideBar())} to={'orders'}>
+              orders
+            </Link>
           </ul>
         </nav>
-        <nav className='flex gap-4 flex-col'>
-          <Link to={'/sign-in'}>sign in</Link>
-          <Link to={'/sign-out'}>sign out</Link>
+        <nav className='flex gap-4 mt-4 flex-col'>
+          <div className=''>
+            <button
+              className='relative flex gap-1'
+              onClick={() => dispatch(handleShowCart())}
+            >
+              Cart
+              <div className='absolute top-[-18px] left-[50px] h-[25px] w-[25px] flex justify-center items-center text-sm rounded-[50%] text-white bg-[#3b82f6]'>
+                1
+              </div>
+              <TiShoppingCart className='text-2xl' />
+            </button>
+          </div>
+          <Link onClick={() => dispatch(handleShowSideBar())} to={'/login'}>
+            sign in
+          </Link>
+          <Link onClick={() => dispatch(handleShowSideBar())} to={'/register'}>
+            sign out
+          </Link>
         </nav>
       </aside>
     </Modal>

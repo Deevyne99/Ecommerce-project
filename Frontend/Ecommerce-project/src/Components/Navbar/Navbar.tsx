@@ -1,13 +1,20 @@
-import React, { useState } from 'react'
 import { Link, Outlet } from 'react-router-dom'
 import { FaBars } from 'react-icons/fa'
 import SideBar from '../SideBar'
 import { TiShoppingCart } from 'react-icons/ti'
 import Cart from '../Cart'
+import { useAppDispatch, useAppSelector } from '../../hooks/hooks'
+import {
+  handleShowSideBar,
+  handleShowCart,
+} from '../../features/modals/modalSlice'
 // import { TiShoppingCart } from 'react-icons/ti'
+handleShowSideBar
+
 const Navbar = () => {
-  const [openSideBar, setSideBar] = useState(false)
-  const handleOpenSideBar = () => setSideBar(!openSideBar)
+  const dispatch = useAppDispatch()
+  const { showCart } = useAppSelector((store) => store.modalSlice)
+
   return (
     <div>
       <div className='flex flex-col'>
@@ -27,7 +34,10 @@ const Navbar = () => {
               </nav>
               <nav className='md:flex gap-8 hidden items-center justify-center'>
                 <div className=''>
-                  <button className='relative'>
+                  <button
+                    className='relative'
+                    onClick={() => dispatch(handleShowCart())}
+                  >
                     <div className='absolute top-[-18px] left-[18px] h-[25px] w-[25px] flex justify-center items-center text-sm rounded-[50%] text-white bg-[#3b82f6]'>
                       1
                     </div>
@@ -39,7 +49,7 @@ const Navbar = () => {
               </nav>
               <button
                 className='flex md:hidden'
-                onClick={() => handleOpenSideBar()}
+                onClick={() => dispatch(handleShowSideBar())}
               >
                 <FaBars className='text-lg' />
               </button>
@@ -47,14 +57,13 @@ const Navbar = () => {
           </div>
         </div>
         <div>
-          <SideBar
-            openSideBar={openSideBar}
-            handleOpenSideBar={handleOpenSideBar}
-          />
+          <SideBar />
         </div>
-        <div>
-          <Cart />
-        </div>
+        {showCart && (
+          <div>
+            <Cart />
+          </div>
+        )}
         <Outlet />
       </div>
     </div>

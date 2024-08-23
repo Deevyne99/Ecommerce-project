@@ -5,7 +5,9 @@ import { Link } from 'react-router-dom'
 const Register = () => {
   return (
     <div className='flex flex-col mx-4 md:mx-12 mt-12'>
-      <h2 className='text-2xl'>Divine store</h2>
+      <Link to={'/'} className='text-2xl'>
+        Divine store
+      </Link>
       <div className='flex gap-4 flex-col justify-center items-center mt-12'>
         <h3 className='text-xl '>
           Let's get started, Please enter your details

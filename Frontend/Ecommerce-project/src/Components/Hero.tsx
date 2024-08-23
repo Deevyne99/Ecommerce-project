@@ -33,7 +33,7 @@ const Hero = () => {
   }
 
   return (
-    <section className='md:mt-12 mt-4 h-[550px] md:h-screen relative w-full flex flex-col overflow-hidden'>
+    <section className='md:mt-12 mt-4 h-[580px] md:h-screen relative w-full flex flex-col overflow-hidden'>
       <div className='flex justify-center items-center gap-8 relative w-full h-full'>
         {products.map((item, index) => {
           const { id, title, img, desc, blurhash } = item
@@ -51,7 +51,7 @@ const Hero = () => {
           return (
             <div
               key={id}
-              className={`absolute top-0 left-0 w-full h-full flex flex-col md:flex-row items-center justify-between md:gap-12 gap-4 transition-transform duration-300 ${position}`}
+              className={`absolute top-0 left-0 w-full h-full flex flex-col md:flex-row items-center justify-center md:justify-between md:gap-12 gap-4 transition-transform duration-300 ${position}`}
             >
               <div className='md:w-1/2 w-full h-full'>
                 {!loaded[index] && (
