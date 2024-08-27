@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { BlurhashCanvas } from 'react-blurhash'
+import { formatPrice } from '../utils'
 
 interface CardItemProps {
   item: {
@@ -49,7 +50,7 @@ const CardItem = ({
       <div className='flex flex-col'>
         <div className='flex justify-between mt-1 text-sm text-[#6b7280]'>
           <h5>{title}</h5>
-          <h5>${amount}</h5>
+          <h5>{formatPrice(amount)}</h5>
         </div>
         <p className='text-sm text-[#6b7280]'>{desc}</p>
       </div>
