@@ -1,6 +1,9 @@
 const customApiError = require('../Errors')
 const Products = require('../Models/products')
 const { StatusCodes } = require('http-status-codes')
+const cloudinary = require('cloudinary').v2
+const fs = require('fs')
+const { log } = require('console')
 
 const getAllProducts = async (req, res) => {
   const products = await Products.find({}).populate('reviews')
@@ -56,10 +59,25 @@ const deleteProduct = async (req, res) => {
   res.status(StatusCodes.OK).json({ success: true, product })
 }
 
+const uploadImage = async (req, res) => {
+  console.log(req.files)
+
+  const result = await cloudinary.uploader.upload(
+    req.files.image.tempFilePath,
+    {
+      use_filename: true,
+      folder: 'ecommerce-project',
+    }
+  )
+  fs.unlinkSync(req.files.image.tempFilePath)
+  return res.status(StatusCodes.OK).json({ image: { src: result.secure_url } })
+}
+
 module.exports = {
   getAllProducts,
   getSingleProduct,
   createProducts,
   updateProduct,
   deleteProduct,
+  uploadImage,
 }

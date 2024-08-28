@@ -10,12 +10,21 @@ const orderRoute = require('./Routes/orderRoutes')
 const errorHandlerMiddleware = require('./Middleware/errorHandler')
 const cookieParser = require('cookie-parser')
 const notFound = require('./Middleware/notFound')
+const fileUpload = require('express-fileupload')
+const cloudinary = require('cloudinary').v2
+
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_NAME,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+  api_key: process.env.CLOUDINARY_API_KEY,
+})
 
 const app = express()
 
 //+++++++++++++++++++++++++++++++Middleware++++++++++++++++++++++++++++++++++++++++
 app.use(express.json())
 app.use(cookieParser(process.env.JWT_LIFETIME))
+app.use(fileUpload({ useTempFiles: true }))
 
 const port = 5000
 
