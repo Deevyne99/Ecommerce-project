@@ -4,12 +4,52 @@ const { StatusCodes } = require('http-status-codes')
 const cloudinary = require('cloudinary').v2
 const fs = require('fs')
 const { log } = require('console')
+const products = require('../Models/products')
 
 const getAllProducts = async (req, res) => {
-  const products = await Products.find({}).populate('reviews')
+  const { search, category, price, sort } = req.query
+  const queryObject = {
+    createdBy: req.user.userId,
+  }
+  if (search) {
+    queryObject.name = { $regex: search, $options: 'i' }
+  }
+  if (category && category !== 'all') {
+    queryObject.category = category
+  }
+  if (price && price !== 0) {
+    queryObject.price = price
+  }
+  let product = Products.find({}).populate('reviews')
+  if (sort === 'latest') {
+    product = result.sort('-createdBt')
+  }
+  if (sort === 'oldest') {
+    product = product.sort('createAt')
+  }
+  if (sort === 'a-z') {
+    product = product.sort('a-z')
+  }
+  if (sort === 'z-a') {
+    product = product.sort('z-a')
+  }
+
+  //setting up pagination
+  const page = Number(req.query.page) || 1
+  const limit = Number(req.query.limit) || 10
+  const skip = (page - 1) * limit
+
+  product = product.skip(skip).limit(limit)
+
+  const products = await product
+
+  const totalProducts = await Products.countDocuments(queryObject)
+
+  const numbOfPages = Math.ceil(totalProducts / limit)
+
   res
     .status(StatusCodes.OK)
-    .json({ success: true, products, count: products.length })
+    .json({ success: true, products, count: totalProducts, pages: numbOfPages })
 }
 
 const createProducts = async (req, res) => {
