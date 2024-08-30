@@ -4,6 +4,7 @@ import { RiDeleteBin6Fill } from 'react-icons/ri'
 import { FiX } from 'react-icons/fi'
 import { useAppSelector, useAppDispatch } from '../hooks/hooks'
 import { handleShowCart } from '../features/modals/modalSlice'
+import { Link } from 'react-router-dom'
 
 // import React from 'react'
 
@@ -78,9 +79,13 @@ const Cart = () => {
           <p className='capitalize '>subtotal</p>
           <p>$329</p>
         </div>
-        <button className='p-2 bg-[#3b82f6] text-[#fff]'>
+        <Link
+          onClick={() => dispatch(handleShowCart())}
+          to='/checkout'
+          className='p-2 bg-[#3b82f6] text-[#fff] text-center'
+        >
           Proceed to checkout
-        </button>
+        </Link>
       </div>
     </Modal>
   )
