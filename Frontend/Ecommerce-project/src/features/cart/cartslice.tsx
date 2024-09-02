@@ -33,13 +33,25 @@ const cartSlice = createSlice({
     },
     removeItem: (state, action) => {
       const { cartID } = action.payload
+      //search for the product
       const product = state.cartItems.find((i) => i.cartID === cartID)
+      //remove the product
       state.cartItems = state.cartItems.filter((i) => i.cartID !== cartID)
+      //after removing the product from cart
+      //remove the number of product from the number of items in cart
       state.numItemsInCart -= product.quantity
+      //remove the price of product from the price of cartTotal of items in cart
       state.cartTotal -= product.price * product.quantity
+      //recalculate the orderTotal
       cartSlice.caseReducers.calculateTotals(state)
       // toast.error('Item removed from cart')
     },
+    //edit cart
+    // //     editItem:(state,action)=>{
+    // // const {cartID,amount} =  action.payload
+    // // const item = state.cartItems.find((data)=>data.id ===cartID)
+
+    //     },
     calculateTotals: (state) => {
       state.tax = 0.1 * state.cartTotal
       state.orderTotal = state.cartTotal + state.shipping + state.tax
@@ -52,3 +64,7 @@ const cartSlice = createSlice({
     },
   },
 })
+
+export default cartSlice.reducer
+
+export const { addItemToCart, removeItem } = cartSlice.actions
