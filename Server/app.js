@@ -24,6 +24,7 @@ const app = express()
 //+++++++++++++++++++++++++++++++Middleware++++++++++++++++++++++++++++++++++++++++
 app.use(express.json())
 app.use(cookieParser(process.env.JWT_LIFETIME))
+app.use(express.static('./public'))
 app.use(fileUpload({ useTempFiles: true }))
 
 const port = process.env.PORT || 5000
@@ -47,6 +48,5 @@ const start = async () => {
     console.log(error)
   }
 }
-
 
 start()
