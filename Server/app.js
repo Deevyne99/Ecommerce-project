@@ -26,7 +26,7 @@ app.use(express.json())
 app.use(cookieParser(process.env.JWT_LIFETIME))
 app.use(fileUpload({ useTempFiles: true }))
 
-const port = 5000
+const port = process.env.PORT || 5000
 
 //++++++++++++++++++++++++++++++ Routes ++++++++++++++++++++++++++++++++++++++++++++
 
@@ -47,5 +47,6 @@ const start = async () => {
     console.log(error)
   }
 }
+
 
 start()
