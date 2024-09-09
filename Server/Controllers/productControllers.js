@@ -3,14 +3,12 @@ const Products = require('../Models/products')
 const { StatusCodes } = require('http-status-codes')
 const cloudinary = require('cloudinary').v2
 const fs = require('fs')
-const { log } = require('console')
 const products = require('../Models/products')
 
 const getAllProducts = async (req, res) => {
   const { search, category, price, sort } = req.query
-  const queryObject = {
-    createdBy: req.user.userId,
-  }
+  const queryObject = {}
+
   if (search) {
     queryObject.name = { $regex: search, $options: 'i' }
   }
@@ -20,7 +18,7 @@ const getAllProducts = async (req, res) => {
   if (price && price !== 0) {
     queryObject.price = price
   }
-  let product = Products.find({}).populate('reviews')
+  let product = Products.find(queryObject).populate('reviews')
   if (sort === 'latest') {
     product = result.sort('-createdBt')
   }
