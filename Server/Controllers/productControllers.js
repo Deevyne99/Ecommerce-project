@@ -3,7 +3,7 @@ const Products = require('../Models/products')
 const { StatusCodes } = require('http-status-codes')
 const cloudinary = require('cloudinary').v2
 const fs = require('fs')
-const products = require('../Models/products')
+// const products = require('../Models/products')
 
 const getAllProducts = async (req, res) => {
   const { search, category, price, sort } = req.query
