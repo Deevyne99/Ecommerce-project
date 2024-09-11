@@ -9,6 +9,8 @@ import Login from './Pages/Login'
 import ForgotPassword from './Pages/ForgotPassword'
 import Order from './Pages/Order'
 import Checkout from './Pages/Checkout'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 // import Footer from './Components/Footer'
 
@@ -29,6 +31,7 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/forgotPassword' element={<ForgotPassword />} />
         </Routes>
+        <ToastContainer />
       </BrowserRouter>
     </div>
   )

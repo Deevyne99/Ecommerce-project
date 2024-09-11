@@ -15,3 +15,19 @@ export interface DefaultStateProps {
   tax: 0
   orderTotal: number
 }
+
+export interface UserProps {
+  name: string
+  role: string
+  email: string
+}
+
+export interface LoginUserProps {
+  email: string
+  password: string
+}
+export interface IntialStateProps {
+  userProfile: UserProps
+  isError: boolean
+  isLoading: boolean
+}
