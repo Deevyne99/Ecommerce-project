@@ -7,6 +7,7 @@ const products = require('../Models/products')
 
 const getAllProducts = async (req, res) => {
   const { search, category, price, sort } = req.query
+  //setting filter for data
   const queryObject = {}
 
   if (search) {
