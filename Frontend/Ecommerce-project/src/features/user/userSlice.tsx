@@ -1,5 +1,9 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import { IntialStateProps, LoginUserProps } from '../../interfaces/interface'
+import {
+  IntialStateProps,
+  LoginUserProps,
+  RegisterUserProps,
+} from '../../interfaces/interface'
 import { customFetch } from '../../utils'
 
 const userProfile = {
@@ -13,11 +17,26 @@ const initialState: IntialStateProps = {
   isError: false,
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const loginUser = createAsyncThunk(
   'user/loginUser',
   async (user: LoginUserProps, thunkAPI) => {
     try {
       const response = await customFetch.post('/ecommerce/auth/login', user)
+      console.log(response)
+      return response.data
+    } catch (error) {
+      console.log(error)
+      return thunkAPI.rejectWithValue(error)
+    }
+  }
+)
+
+export const RegisterUser = createAsyncThunk(
+  'user/registerUser',
+  async (user: RegisterUserProps, thunkAPI) => {
+    try {
+      const response = await customFetch.post('/ecommerce/auth/register', user)
       console.log(response)
       return response.data
     } catch (error) {

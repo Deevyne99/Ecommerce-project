@@ -31,3 +31,9 @@ export interface IntialStateProps {
   isError: boolean
   isLoading: boolean
 }
+
+export interface RegisterUserProps {
+  name: string
+  email: string
+  password: string
+}
