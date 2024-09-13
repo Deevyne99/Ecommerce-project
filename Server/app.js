@@ -12,6 +12,22 @@ const cookieParser = require('cookie-parser')
 const notFound = require('./Middleware/notFound')
 const fileUpload = require('express-fileupload')
 const cloudinary = require('cloudinary').v2
+const helmet = require('helmet')
+const cors = require('cors')
+const xss = require('xss-clean')
+const rateLimiter = require('express-rate-limit')
+
+app.use(helmet())
+app.use(cors())
+app.use(xss())
+
+app.set('trust proxy', 1)
+app.use(
+  rateLimiter({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 100, // limit each IP to 100 requests per windowMs
+  })
+)
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_NAME,
