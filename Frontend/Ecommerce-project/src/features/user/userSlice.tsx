@@ -19,7 +19,7 @@ export const loginUser = createAsyncThunk(
     try {
       const response = await customFetch.post('/ecommerce/auth/login', user)
       console.log(response)
-      return response
+      return response.data
     } catch (error) {
       console.log(error)
       return thunkAPI.rejectWithValue(error)
