@@ -17,6 +17,15 @@ const cors = require('cors')
 const xss = require('xss-clean')
 const rateLimiter = require('express-rate-limit')
 
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_NAME,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+  api_key: process.env.CLOUDINARY_API_KEY,
+})
+
+const app = express()
+
+//+++++++++++++++++++++++++++++++Middleware++++++++++++++++++++++++++++++++++++++++
 app.use(helmet())
 app.use(cors())
 app.use(xss())
@@ -28,16 +37,6 @@ app.use(
     max: 100, // limit each IP to 100 requests per windowMs
   })
 )
-
-cloudinary.config({
-  cloud_name: process.env.CLOUDINARY_NAME,
-  api_secret: process.env.CLOUDINARY_API_SECRET,
-  api_key: process.env.CLOUDINARY_API_KEY,
-})
-
-const app = express()
-
-//+++++++++++++++++++++++++++++++Middleware++++++++++++++++++++++++++++++++++++++++
 app.use(express.json())
 app.use(cookieParser(process.env.JWT_LIFETIME))
 app.use(express.static('./public'))
