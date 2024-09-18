@@ -17,9 +17,9 @@ export interface DefaultStateProps {
 }
 
 export interface UserProps {
-  name: string
+  user: string
   role: string
-  email: string
+  userId: string
 }
 
 export interface LoginUserProps {

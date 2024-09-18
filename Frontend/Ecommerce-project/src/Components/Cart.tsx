@@ -10,9 +10,7 @@ import { Link } from 'react-router-dom'
 
 const Cart = () => {
   const { showCart } = useAppSelector((store) => store.modalSlice)
-  const { cartItems, cartTotal, numOfItemsInCart } = useAppSelector(
-    (store) => store.cartslice
-  )
+  const { cartItems } = useAppSelector((store) => store.cartSlice)
 
   console.log(cartItems)
   const dispatch = useAppDispatch()

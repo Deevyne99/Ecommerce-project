@@ -19,7 +19,7 @@ const Login = () => {
       return
     }
     dispatch(loginUser(user))
-    toast.success('user logged in')
+    // toast.success('user logged in')
   }
   return (
     <div>

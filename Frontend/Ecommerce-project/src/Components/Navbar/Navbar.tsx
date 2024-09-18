@@ -8,12 +8,15 @@ import {
   handleShowSideBar,
   handleShowCart,
 } from '../../features/modals/modalSlice'
+import { logoutUser } from '../../features/user/userSlice'
+
 // import { TiShoppingCart } from 'react-icons/ti'
 handleShowSideBar
 
 const Navbar = () => {
   const dispatch = useAppDispatch()
   const { showCart } = useAppSelector((store) => store.modalSlice)
+  const { userProfile } = useAppSelector((store) => store.userSlice)
 
   return (
     <div>
@@ -44,8 +47,15 @@ const Navbar = () => {
                     <TiShoppingCart className='text-2xl' />
                   </button>
                 </div>
-                <Link to={'/register'}>register</Link>
-                <Link to={'/login'}>login</Link>
+                {userProfile.user ? (
+                  <button onClick={() => dispatch(logoutUser())}>Logout</button>
+                ) : (
+                  <div className='flex gap-6'>
+                    <Link to={'/register'}>register</Link>
+
+                    <Link to={'/login'}>login</Link>
+                  </div>
+                )}
               </nav>
               <button
                 className='flex md:hidden'
