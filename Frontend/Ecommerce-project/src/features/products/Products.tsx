@@ -31,39 +31,9 @@ const productSlice = createSlice({
       state.error = false
     })
     builder.addCase(getAllProducts.fulfilled, (state, { payload }) => {
-      // const {
-      //   id,
-      //   name,
-      //   price,
-      //   description,
-      //   image,
-      //   images,
-      //   category,
-      //   colors,
-      //   freeShipping,
-      //   inventory,
-      //   averageRating,
-      //   numOfReviews,
-      //   user,
-      // } = payload.products
       state.error = false
       state.loading = false
       state.products = payload.products
-      // state.products = [,{
-      //   id,
-      //   name,
-      //   price,
-      //   description,
-      //   image,
-      //   images,
-      //   category,
-      //   colors,
-      //   freeShipping,
-      //   inventory,
-      //   averageRating,
-      //   numOfReviews,
-      //   user,
-      // }]
     })
     builder.addCase(getAllProducts.rejected, (state, { payload }) => {
       state.error = true
