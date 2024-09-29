@@ -1,12 +1,13 @@
 import CardItem from '../Components/CardItem'
 
 import Footer from '../Components/Footer'
-import { data } from '../data'
-data
+import { useAppSelector } from '../hooks/hooks'
+// import { data } from '../data'
 
 // import React from 'react'
 
 const Products = () => {
+  const { products } = useAppSelector((state) => state.productSlice)
   return (
     <div className='h-screen my-24 flex-col flex '>
       <div className='flex flex-col mx-4 md:mx-12 '>
@@ -80,8 +81,8 @@ const Products = () => {
             </div>
           </aside>
           <div className='grid w-full sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 '>
-            {data.map((item, index) => {
-              return <CardItem item={item} key={index} />
+            {products.map((product, index) => {
+              return <CardItem item={product} key={index} />
             })}
           </div>
         </div>

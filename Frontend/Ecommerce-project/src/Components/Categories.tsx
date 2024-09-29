@@ -1,9 +1,10 @@
-import { products } from '../data'
+import { useAppSelector } from '../hooks/hooks'
 import CategoryItem from './CategoryItem'
-products
+
 // import React from 'react'
 
 const Categories = () => {
+  const { products } = useAppSelector((state) => state.productSlice)
   return (
     <div className='flex flex-col '>
       <div className='flex mx-4 md:mx-12'>
