@@ -8,6 +8,9 @@ import Register from './Pages/Register'
 import Login from './Pages/Login'
 import ForgotPassword from './Pages/ForgotPassword'
 import Order from './Pages/Order'
+import Checkout from './Pages/Checkout'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 // import Footer from './Components/Footer'
 
@@ -21,12 +24,14 @@ function App() {
             <Route path='/products' element={<Products />} />
             <Route path='/about' element={<About />} />
             <Route path='/orders' element={<Order />} />
+            <Route path='/checkout' element={<Checkout />} />
             <Route path='/product/:id' element={<SingleProduct />} />
           </Route>
           <Route path='/register' element={<Register />} />
           <Route path='/login' element={<Login />} />
           <Route path='/forgotPassword' element={<ForgotPassword />} />
         </Routes>
+        <ToastContainer />
       </BrowserRouter>
     </div>
   )
