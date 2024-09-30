@@ -5,10 +5,23 @@ formatPrice
 
 import { useAppSelector } from '../hooks/hooks'
 import { formatPrice } from '../utils'
-
+import { HashLoader } from 'react-spinners'
 const SingleProduct = () => {
-  const { product } = useAppSelector((state) => state.productSlice)
+  const { product, loadingSingleProducts } = useAppSelector(
+    (state) => state.productSlice
+  )
   const [imgUrl, setImgUrl] = useState(product.image)
+
+  if (loadingSingleProducts) {
+    return (
+      <div className='flex  justify-center mx-auto items-center h-screen'>
+        <HashLoader
+          color='#3b82f6'
+          className='justify-center items-center mx-auto'
+        />
+      </div>
+    )
+  }
 
   return (
     <div className='mt-24'>

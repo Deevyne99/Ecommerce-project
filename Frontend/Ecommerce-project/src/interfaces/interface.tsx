@@ -85,6 +85,7 @@ export interface ProductProps {
 export interface ProductsProps {
   products: ProductProps[]
   error: boolean
-  loading: boolean
+  loadingAllProducts: boolean
   product: ProductProps
+  loadingSingleProducts: boolean
 }

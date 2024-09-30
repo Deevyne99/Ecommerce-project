@@ -6,7 +6,8 @@ import { customFetch } from '../../utils'
 const initialState: ProductsProps = {
   products: [],
   error: false,
-  loading: false,
+  loadingAllProducts: false,
+  loadingSingleProducts: false,
   product: {
     id: '',
     name: '',
@@ -56,28 +57,28 @@ const productSlice = createSlice({
   initialState,
   extraReducers: (builder) => {
     builder.addCase(getAllProducts.pending, (state) => {
-      state.loading = true
+      state.loadingAllProducts = true
       state.error = false
     })
     builder.addCase(getAllProducts.fulfilled, (state, { payload }) => {
       state.error = false
-      state.loading = false
+      state.loadingAllProducts = false
       state.products = payload.products
     })
     builder.addCase(getAllProducts.rejected, (state, { payload }) => {
       state.error = true
 
       toast.error(`${payload}`)
-      state.loading = false
+      state.loadingAllProducts = false
     })
     builder.addCase(getSingleProduct.pending, (state) => {
-      state.loading = true
+      state.loadingSingleProducts = true
       state.error = false
       state.product = initialState.product
     })
     builder.addCase(getSingleProduct.fulfilled, (state, { payload }) => {
       state.error = false
-      state.loading = false
+      state.loadingSingleProducts = false
       state.product = payload.product
 
       //state.products = payload.products
@@ -85,7 +86,7 @@ const productSlice = createSlice({
     builder.addCase(getSingleProduct.rejected, (state, { payload }) => {
       state.error = true
       toast.error(`${payload}`)
-      state.loading = false
+      state.loadingSingleProducts = false
     })
   },
   reducers: {},
