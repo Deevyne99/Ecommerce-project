@@ -1,13 +1,38 @@
 import CardItem from '../Components/CardItem'
-
+import { useEffect } from 'react'
 import Footer from '../Components/Footer'
 import { useAppSelector } from '../hooks/hooks'
+import PaginationContainer from '../Components/PaginationContainer'
+import { HashLoader } from 'react-spinners'
+// import { getAllProducts } from '../features/products/Products'
+
 // import { data } from '../data'
 
 // import React from 'react'
 
 const Products = () => {
-  const { products } = useAppSelector((state) => state.productSlice)
+  const { products, loadingAllProducts } = useAppSelector(
+    (state) => state.productSlice
+  )
+  // const dispatch = useAppDispatch()
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
+  // useEffect(() => {
+  //   dispatch(getAllProducts({ page: 0 }))
+  // }, [dispatch, products])
+  if (loadingAllProducts) {
+    return (
+      <div className='flex  justify-center mx-auto items-center h-screen'>
+        <HashLoader
+          color='#3b82f6'
+          className='justify-center items-center mx-auto'
+        />
+      </div>
+    )
+  }
+
   return (
     <div className='h-screen my-24 flex-col flex '>
       <div className='flex flex-col mx-4 md:mx-12 '>
@@ -87,6 +112,9 @@ const Products = () => {
           </div>
         </div>
         <div className='mt-16'></div>
+      </div>
+      <div className='my-4 mx-4'>
+        <PaginationContainer />
       </div>
       <Footer />
     </div>

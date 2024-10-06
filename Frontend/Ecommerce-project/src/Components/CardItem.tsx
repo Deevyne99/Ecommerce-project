@@ -17,8 +17,8 @@ const CardItem = ({ item }: { item: ProductProps }) => {
       className='flex flex-col h-[300px] md:h-[250px] w-full md:w-[210px] '
     >
       <Link
-        className='h-[250px] w-full md:w-[210px]'
-        onMouseEnter={() => setImgUrl(item.images[0])}
+        className='h-[260px] w-full md:w-[210px]'
+        onMouseEnter={() => setImgUrl(item.images[0] || imgUrl)}
         onMouseLeave={() => setImgUrl(item.image)}
         to={`/product/${item.id}`}
       >
@@ -33,7 +33,7 @@ const CardItem = ({ item }: { item: ProductProps }) => {
       </Link>
       <div className='flex flex-col'>
         <div className='flex justify-between  text-sm text-[#6b7280]'>
-          <h5 className='capitalize max-w-[130px]'>{item.name}</h5>
+          <h5 className='capitalize w-[140px] truncate'>{item.name}</h5>
           <h5>{formatPrice(item.price)}</h5>
         </div>
         {/* <p className='text-sm text-[#6b7280]'>{item.description}</p> */}
