@@ -2,11 +2,13 @@ import { useState, useEffect } from 'react'
 // import { products } from '../data'
 import { Link } from 'react-router-dom'
 // import { Blurhash } from 'react-blurhash'
-import { useAppSelector } from '../hooks/hooks'
+import { useAppSelector, useAppDispatch } from '../hooks/hooks'
+import { getSingleProduct } from '../features/products/Products'
 
 const Hero = () => {
   const [productIndex, setProductIndex] = useState(0)
   // const [loaded, setLoaded] = useState(Array(products.length).fill(false))
+  const dispatch = useAppDispatch()
   const { products } = useAppSelector((state) => state.productSlice)
   useEffect(() => {
     const lastIndex = products.length - 1
@@ -63,7 +65,10 @@ const Hero = () => {
                   when you expect them!
                 </p>
                 <Link
-                  to={`/product/${id}`}
+                  onClick={() =>
+                    dispatch(getSingleProduct({ productId: item.id }))
+                  }
+                  to={`/product/${item.id}`}
                   className='capitalize text-center mt-2 p-2 bg-[#3b82f6] text-[#fff] w-[100px]'
                 >
                   shop

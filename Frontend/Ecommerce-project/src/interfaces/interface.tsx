@@ -88,4 +88,6 @@ export interface ProductsProps {
   loadingAllProducts: boolean
   product: ProductProps
   loadingSingleProducts: boolean
+  pagesCount: number
+  active: number
 }

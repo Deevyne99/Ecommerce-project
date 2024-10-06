@@ -3,6 +3,12 @@ import { ProductsProps } from '../../interfaces/interface'
 import { toast } from 'react-toastify'
 import { customFetch } from '../../utils'
 
+interface QueryParams {
+  page?: number
+  category?: string // or string[] if there are multiple categories
+  sort?: string
+}
+
 const initialState: ProductsProps = {
   products: [],
   error: false,
@@ -23,14 +29,19 @@ const initialState: ProductsProps = {
     numOfReviews: 0,
     user: '',
   },
+  pagesCount: 0,
+  active: 0,
 }
-const page = 5
+// const page = 5
 
 export const getAllProducts = createAsyncThunk(
   'products/getAllProducts',
-  async () => {
+  async (params: QueryParams) => {
     try {
-      const { data } = await customFetch.get(`/ecommerce/products?page=${page}`)
+      const queryString = new URLSearchParams(params as any).toString()
+      const { data } = await customFetch.get(
+        `/ecommerce/products?${queryString}`
+      )
       console.log(data)
       return data
     } catch (error) {
@@ -64,6 +75,7 @@ const productSlice = createSlice({
       state.error = false
       state.loadingAllProducts = false
       state.products = payload.products
+      state.pagesCount = payload.pages
     })
     builder.addCase(getAllProducts.rejected, (state, { payload }) => {
       state.error = true
@@ -89,7 +101,19 @@ const productSlice = createSlice({
       state.loadingSingleProducts = false
     })
   },
-  reducers: {},
+  reducers: {
+    resetProducts: (state) => {
+      state.products = []
+    },
+    resetSingleProduct: (state) => {
+      state.product = initialState.product
+    },
+    handleActivePagination: (state, { payload }) => {
+      state.active = payload
+    },
+  },
 })
+
+export const { resetProducts, handleActivePagination } = productSlice.actions
 
 export default productSlice.reducer
