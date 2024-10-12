@@ -11,6 +11,7 @@ import { TiShoppingCart } from 'react-icons/ti'
 
 const SideBar = () => {
   const { showSidebar } = useAppSelector((store) => store.modalSlice)
+  const { numOfItemsInCart } = useAppSelector((store) => store.cartSlice)
   const dispatch = useAppDispatch()
   // const [openSideBar, setSideBar] = useState(true)
   return (
@@ -24,7 +25,7 @@ const SideBar = () => {
           <FiX />
         </button>
         <nav>
-          <ul className='flex flex-col gap-4 items-left '>
+          <ul className='flex flex-col gap-4 items-left capitalize text-[#1c0f0f]'>
             <Link onClick={() => dispatch(handleShowSideBar())} to={'/'}>
               Home
             </Link>
@@ -42,16 +43,18 @@ const SideBar = () => {
             </Link>
           </ul>
         </nav>
-        <nav className='flex gap-4 mt-4 flex-col'>
+        <nav className='flex gap-4 mt-4 flex-col text-[#1c0f0f]'>
           <div className=''>
             <button
               className='relative flex gap-1'
               onClick={() => dispatch(handleShowCart())}
             >
               Cart
-              <div className='absolute top-[-18px] left-[50px] h-[25px] w-[25px] flex justify-center items-center text-sm rounded-[50%] text-white bg-[#3b82f6]'>
-                1
-              </div>
+              {numOfItemsInCart > 0 && (
+                <div className='absolute top-[-18px] left-[50px] h-[25px] w-[25px] flex justify-center items-center text-sm rounded-[50%] text-white bg-[#3b82f6]'>
+                  {numOfItemsInCart}
+                </div>
+              )}
               <TiShoppingCart className='text-2xl' />
             </button>
           </div>

@@ -4,6 +4,7 @@ import Footer from '../Components/Footer'
 import { useAppSelector } from '../hooks/hooks'
 import PaginationContainer from '../Components/PaginationContainer'
 import { HashLoader } from 'react-spinners'
+
 // import { getAllProducts } from '../features/products/Products'
 
 // import { data } from '../data'
@@ -11,6 +12,7 @@ import { HashLoader } from 'react-spinners'
 // import React from 'react'
 
 const Products = () => {
+  // const dispatch = useAppDispatch()
   const { products, loadingAllProducts } = useAppSelector(
     (state) => state.productSlice
   )
@@ -18,6 +20,13 @@ const Products = () => {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
+
+  // useEffect(() => {
+  //   if (!products || products.length === 0) {
+
+  //     dispatch(getAllProducts({ page: 0 }))
+  //   }
+  // }, [dispatch, products])
 
   // useEffect(() => {
   //   dispatch(getAllProducts({ page: 0 }))
@@ -35,7 +44,7 @@ const Products = () => {
 
   return (
     <div className='h-screen my-24 flex-col flex '>
-      <div className='flex flex-col mx-4 md:mx-12 '>
+      <div className='flex flex-col mx-4 md:mx-8 '>
         <div className='flex gap-4'>
           {/* <div className=''>
           <h1>Sidebar</h1>
@@ -43,7 +52,7 @@ const Products = () => {
           {/* <div>
           <Features />
         </div> */}
-          <aside className='gap-4  px-2 flex-col md:w-[180px] lg:w-[200px] hidden md:flex'>
+          <aside className='gap-4  px-2 flex-col md:w-[120px] lg:w-[200px] hidden md:flex'>
             <h3>Product Categories</h3>
             <div className='flex gap-3 items-center'>
               <input type='checkbox' name='Pending' id='' />

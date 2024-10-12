@@ -1,16 +1,48 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 // import { singleProduct } from '../data'
 import Footer from '../Components/Footer'
 formatPrice
 
-import { useAppSelector } from '../hooks/hooks'
+import { useAppDispatch, useAppSelector } from '../hooks/hooks'
 import { formatPrice } from '../utils'
 import { HashLoader } from 'react-spinners'
+import { addItemToCart } from '../features/cart/cartslice'
+
 const SingleProduct = () => {
   const { product, loadingSingleProducts } = useAppSelector(
     (state) => state.productSlice
   )
   const [imgUrl, setImgUrl] = useState(product.image)
+  const [amount, setAmount] = useState(1)
+  const dispatch = useAppDispatch()
+  const cartItem = {
+    name: product.name,
+    image: product.image,
+    price: product.price,
+    amount,
+    product: product.id,
+  }
+  // console.log(cartItem)
+
+  const addtocart = () => {
+    dispatch(addItemToCart({ product: cartItem }))
+    console.log(cartItem)
+  }
+  const handleQuantity = (action: string) => {
+    if (action === 'increase') {
+      setAmount((amount) => (amount += 1))
+      return
+    }
+    if (action === 'decrease') {
+      if (amount === 1) {
+        return
+      }
+      setAmount((amount) => (amount -= 1))
+    }
+  }
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   if (loadingSingleProducts) {
     return (
@@ -67,11 +99,17 @@ const SingleProduct = () => {
               {formatPrice(product.price)}
             </p>
             <div className='mt-6 flex gap-2'>
-              <button className='bg-slate-200 w-[30px] h-[30px] flex justify-center items-center p-1'>
+              <button
+                onClick={() => handleQuantity('increase')}
+                className='bg-slate-200 w-[30px] h-[30px] flex justify-center items-center p-1'
+              >
                 +
               </button>
-              <p className='flex justify-center items-center'>1</p>
-              <button className='bg-slate-200 w-[30px] h-[30px] flex justify-center items-center p-1'>
+              <p className='flex justify-center items-center'>{amount}</p>
+              <button
+                onClick={() => handleQuantity('decrease')}
+                className='bg-slate-200 w-[30px] h-[30px] flex justify-center items-center p-1'
+              >
                 -
               </button>
             </div>
@@ -88,7 +126,10 @@ const SingleProduct = () => {
                 })}
               </div>
             </div>
-            <button className='capitalize mt-4 p-2 bg-[#3b82f6] text-[#fff] w-[150px]'>
+            <button
+              onClick={() => addtocart()}
+              className='capitalize mt-4 p-2 bg-[#3b82f6] text-[#fff] w-[150px]'
+            >
               Add to cart
             </button>
           </article>

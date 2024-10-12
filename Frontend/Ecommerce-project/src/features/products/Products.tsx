@@ -30,7 +30,7 @@ const initialState: ProductsProps = {
     user: '',
   },
   pagesCount: 0,
-  active: 0,
+  active: 1,
 }
 // const page = 5
 
@@ -38,7 +38,7 @@ export const getAllProducts = createAsyncThunk(
   'products/getAllProducts',
   async (params: QueryParams) => {
     try {
-      const queryString = new URLSearchParams(params as any).toString()
+      const queryString = new URLSearchParams(params as string).toString()
       const { data } = await customFetch.get(
         `/ecommerce/products?${queryString}`
       )

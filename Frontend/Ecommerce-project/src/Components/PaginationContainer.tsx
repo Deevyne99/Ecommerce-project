@@ -34,8 +34,8 @@ const PaginationContainer = () => {
             <div key={item}>
               <button
                 onClick={() => handleDataFetch(item)}
-                className={`bg-[#3b82f6] w-[40px] h-[40px] p-2 shadow-md text-[#fff] rounded-md ${
-                  active === item ? 'bg-white   text-[#000]' : ''
+                className={`bg-[#3b82f6] w-[40px] h-[40px] p-2 shadow-md  rounded-md ${
+                  active === item ? 'bg-white   text-[#6b7280] ' : 'text-[#fff]'
                 }`}
               >
                 {item}
