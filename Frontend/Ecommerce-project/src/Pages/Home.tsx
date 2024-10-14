@@ -4,7 +4,11 @@ import Features from '../Components/Features'
 import Footer from '../Components/Footer'
 import Hero from '../Components/Hero'
 import { useAppDispatch, useAppSelector } from '../hooks/hooks'
-import { getAllProducts } from '../features/products/Products'
+import {
+  getAllProducts,
+  resetCategory,
+  resetProducts,
+} from '../features/products/Products'
 
 import { HashLoader } from 'react-spinners'
 import { customFetch } from '../utils'
@@ -22,6 +26,8 @@ const Home = () => {
   const [pageNum, setPageNum] = useState(0)
 
   useEffect(() => {
+    dispatch(resetProducts())
+    dispatch(resetCategory())
     dispatch(getAllProducts({ page: pageNum }))
   }, [])
   useEffect(() => {

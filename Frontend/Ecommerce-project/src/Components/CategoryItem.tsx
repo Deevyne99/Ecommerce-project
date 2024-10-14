@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom'
 import { ProductProps } from '../interfaces/interface'
 
-import { getAllProducts, resetProducts } from '../features/products/Products'
+import {
+  getAllProducts,
+  handleCategory,
+  resetProducts,
+} from '../features/products/Products'
 import { useAppDispatch } from '../hooks/hooks'
 
 // interface CategoryItem {
@@ -19,6 +23,7 @@ const CategoryItem = ({ item }: { item: ProductProps }) => {
   //  const [category, setcategory] = useState()
   const handleDataFetch = () => {
     dispatch(resetProducts())
+    dispatch(handleCategory(item.category))
     dispatch(getAllProducts({ category: `${item.category}` }))
   }
 

@@ -8,7 +8,9 @@ import {
 import { useAppDispatch, useAppSelector } from '../hooks/hooks'
 
 const PaginationContainer = () => {
-  const { pagesCount, active } = useAppSelector((state) => state.productSlice)
+  const { pagesCount, active, category } = useAppSelector(
+    (state) => state.productSlice
+  )
   //  const [active, setActive] = useState(1)
   const dispatch = useAppDispatch()
   const numPages = Array.from({ length: pagesCount }, (_, index) => {
@@ -19,7 +21,7 @@ const PaginationContainer = () => {
     // setActive(num)
     dispatch(handleActivePagination(num))
     dispatch(resetProducts())
-    dispatch(getAllProducts({ page: num }))
+    dispatch(getAllProducts({ page: num, category }))
     window.scrollTo(0, 0)
   }
   // console.log(active)

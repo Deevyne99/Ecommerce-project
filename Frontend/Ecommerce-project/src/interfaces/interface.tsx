@@ -90,4 +90,5 @@ export interface ProductsProps {
   loadingSingleProducts: boolean
   pagesCount: number
   active: number
+  category: string
 }

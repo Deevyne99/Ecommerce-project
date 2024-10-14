@@ -31,6 +31,7 @@ const initialState: ProductsProps = {
   },
   pagesCount: 0,
   active: 1,
+  category: '',
 }
 // const page = 5
 
@@ -111,9 +112,20 @@ const productSlice = createSlice({
     handleActivePagination: (state, { payload }) => {
       state.active = payload
     },
+    handleCategory: (state, { payload }) => {
+      state.category = payload
+    },
+    resetCategory: (state) => {
+      state.category = ''
+    },
   },
 })
 
-export const { resetProducts, handleActivePagination } = productSlice.actions
+export const {
+  resetProducts,
+  handleActivePagination,
+  handleCategory,
+  resetCategory,
+} = productSlice.actions
 
 export default productSlice.reducer
