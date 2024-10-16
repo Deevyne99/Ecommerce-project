@@ -76,6 +76,7 @@ const productSlice = createSlice({
       state.error = false
       state.loadingAllProducts = false
       state.products = payload.products
+      state.product = payload.products[0]
       state.pagesCount = payload.pages
     })
     builder.addCase(getAllProducts.rejected, (state, { payload }) => {

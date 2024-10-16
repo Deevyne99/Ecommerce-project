@@ -1,23 +1,37 @@
 import Modal from './Modal'
-import sale from '../assets/sale-8.jpg'
+
 import { RiDeleteBin6Fill } from 'react-icons/ri'
 import { FiX } from 'react-icons/fi'
 import { useAppSelector, useAppDispatch } from '../hooks/hooks'
 import { handleShowCart } from '../features/modals/modalSlice'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { formatPrice } from '../utils'
+import { toast } from 'react-toastify'
+import { removeItem } from '../features/cart/cartslice'
 
 // import React from 'react'
 
 const Cart = () => {
   const { showCart } = useAppSelector((store) => store.modalSlice)
-  const { cartItems } = useAppSelector((store) => store.cartSlice)
+  const { cartItems, cartTotal } = useAppSelector((store) => store.cartSlice)
+  const { userProfile } = useAppSelector((store) => store.userSlice)
+  const navigate = useNavigate()
 
-  console.log(cartItems)
   const dispatch = useAppDispatch()
+  const handleCheckout = () => {
+    if (userProfile.user) {
+      dispatch(handleShowCart())
+      navigate('/checkout')
+      return
+    }
+    dispatch(handleShowCart())
+    navigate('/login')
+    toast.error('Please login')
+    return
+  }
   return (
     <Modal openModal={showCart}>
-      <div className=' flex flex-col right-0 left-0 mx-auto w-[90%] rounded-md bg-white p-4 fixed gap-4 max-w-[400px] md:mx-0 md:left-auto  md:right-8 top-16 '>
+      <div className=' flex flex-col right-0 left-0 mx-auto w-[90%] rounded-md bg-white p-3 fixed gap-4 max-w-[400px] md:mx-0 md:left-auto  md:right-8 top-16 '>
         <button
           onClick={() => dispatch(handleShowCart())}
           className='fixed right-4 ml-auto left-0  md:right-[500px] h-[30px] w-[30px] items-center flex justify-center top-[20px] md:top-[40px] bg-white rounded-[50%]'
@@ -25,7 +39,7 @@ const Cart = () => {
           <FiX />
         </button>
         {cartItems?.length > 0 && (
-          <div className='flex flex-col gap-4 max-h-[500px] overflow-y-scroll'>
+          <div className='flex flex-col gap-4 px-2 max-h-[500px] overflow-y-scroll'>
             <div className='flex flex-col text-[#6b7280] font-bold'>
               <p>Products in your cart</p>
             </div>
@@ -50,7 +64,10 @@ const Cart = () => {
                       {amount} x {formatPrice(price)}
                     </p>
                   </article>
-                  <button className='flex'>
+                  <button
+                    onClick={() => dispatch(removeItem({ product, amount }))}
+                    className='flex'
+                  >
                     <RiDeleteBin6Fill className='text-xl text-red-500' />
                   </button>
                 </div>
@@ -59,15 +76,14 @@ const Cart = () => {
 
             <div className='flex justify-between text-[#6b7280] font-bold'>
               <p className='capitalize '>subtotal</p>
-              <p>{20}</p>
+              <p>{formatPrice(cartTotal)}</p>
             </div>
-            <Link
-              onClick={() => dispatch(handleShowCart())}
-              to='/checkout'
+            <div
+              onClick={() => handleCheckout()}
               className='p-2 bg-[#3b82f6] text-[#fff] text-center'
             >
               Proceed to checkout
-            </Link>
+            </div>
           </div>
         )}
         {cartItems?.length === 0 && (

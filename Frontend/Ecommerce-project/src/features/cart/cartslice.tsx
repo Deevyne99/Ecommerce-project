@@ -12,9 +12,9 @@ const defaultState: DefaultStateProps = {
   orderTotal: 0,
 }
 
-const getLocalStorage = () => {
-  return JSON.parse(localStorage.getItem('cart') || 'null') || defaultState
-}
+// const getLocalStorage = () => {
+//   return JSON.parse(localStorage.getItem('cart') || 'null') || defaultState
+// }
 
 const cartSlice = createSlice({
   name: 'cartslice',
@@ -38,24 +38,24 @@ const cartSlice = createSlice({
       toast.success('Added to cart')
     },
     removeItem: (state, action) => {
-      const { cartID } = action.payload
+      const { product, amount } = action.payload
       //search for the product
-      const product = state.cartItems.find((i) => i.cartID === cartID)
+      const isProduct = state.cartItems.find(
+        (i) => String(i.product) === product
+      )
       //remove the product
-      state.cartItems = state.cartItems.filter((i) => i.cartID !== cartID)
+      if (isProduct) {
+        state.cartItems = state.cartItems.filter(
+          (i) => String(i.product) !== product
+        )
+        toast.success('Deleted Successfully')
+      }
+
+      state.numOfItemsInCart = state.numOfItemsInCart - amount
+      cartSlice.caseReducers.calculateTotals(state)
       //after removing the product from cart
       //remove the number of product from the number of items in cart
-      state.numItemsInCart -= product.amount
-      //remove the price of product from the price of cartTotal of items in cart
-      state.cartTotal -= product.price * product.amount
-      //recalculate the orderTotal
-      cartSlice.caseReducers.calculateTotals(state)
-      // toast.error('Item removed from cart')
     },
-    //edit cart
-    // //     editItem:(state,action)=>{
-    // // const {cartID,amount} =  action.payload
-    // // const item = state.cartItems.find((data)=>data.id ===cartID)
 
     //     },
     calculateTotals: (state) => {

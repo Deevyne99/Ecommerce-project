@@ -28,7 +28,7 @@ const Hero = () => {
   }, [productIndex])
 
   return (
-    <section className='md:mt-12 mt-4 h-[580px] md:h-screen relative w-full flex flex-col overflow-hidden'>
+    <section className='md:mt-12 mt-4 h-[600px] sm:h-[570px] md:h-screen relative w-full flex flex-col overflow-hidden'>
       <div className='flex justify-center items-center gap-8 relative w-full h-full'>
         {products.map((item, index) => {
           const { id, image, description, name } = item
@@ -56,10 +56,10 @@ const Hero = () => {
                 />
               </div>
               <div className='flex flex-col items-center justify-center gap-2 w-full md:w-1/2 max-w-[600px]'>
-                <h2 className='font-bold text-2xl text-[#1c0f0f] md:text-left text-center'>
+                <h2 className='font-bold text-2xl px-2 text-[#1c0f0f] md:text-left text-center'>
                   {name}
                 </h2>
-                <p className='md:w-[80%] w-full text-center text-[#6b7280] md:text-[15px] text-sm px-4 md:px-0 leading-8'>
+                <p className='md:w-[80%] w-full text-center text-[#6b7280] md:text-[15px] text-sm px-4 md:px-0 leading-8 '>
                   {description} With our new e-commerce platform, you can always
                   count on timely delivery. We ensure your orders arrive right
                   when you expect them!
