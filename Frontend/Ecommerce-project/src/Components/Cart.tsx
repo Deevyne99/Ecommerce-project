@@ -3,11 +3,12 @@ import Modal from './Modal'
 import { RiDeleteBin6Fill } from 'react-icons/ri'
 import { FiX } from 'react-icons/fi'
 import { useAppSelector, useAppDispatch } from '../hooks/hooks'
-import { handleShowCart } from '../features/modals/modalSlice'
+import { handleCloseCart, handleShowCart } from '../features/modals/modalSlice'
 import { Link, useNavigate } from 'react-router-dom'
 import { formatPrice } from '../utils'
 import { toast } from 'react-toastify'
 import { removeItem } from '../features/cart/cartslice'
+import { useEffect, useRef } from 'react'
 
 // import React from 'react'
 
@@ -16,6 +17,7 @@ const Cart = () => {
   const { cartItems, cartTotal } = useAppSelector((store) => store.cartSlice)
   const { userProfile } = useAppSelector((store) => store.userSlice)
   const navigate = useNavigate()
+  const modalRef = useRef<HTMLDivElement>(null)
 
   const dispatch = useAppDispatch()
   const handleCheckout = () => {
@@ -29,9 +31,30 @@ const Cart = () => {
     toast.error('Please login')
     return
   }
+  useEffect(() => {
+    const handleBackdropClick = (e: MouseEvent) => {
+      // Check if the click event target is outside the modal
+      if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
+        dispatch(handleCloseCart())
+      }
+    }
+
+    // Attach event listener when modal is open
+    if (showCart) {
+      document.addEventListener('mousedown', handleBackdropClick)
+    }
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      document.removeEventListener('click', handleBackdropClick)
+    }
+  }, [showCart, dispatch])
   return (
     <Modal openModal={showCart}>
-      <div className=' flex flex-col right-0 left-0 mx-auto w-[90%] rounded-md bg-white p-3 fixed gap-4 max-w-[400px] md:mx-0 md:left-auto  md:right-8 top-16 '>
+      <div
+        ref={modalRef}
+        className=' flex flex-col right-0 left-0 mx-auto w-[90%] rounded-md bg-white p-3 fixed gap-4 max-w-[400px] md:mx-0 md:left-auto  md:right-8 top-16 '
+      >
         <button
           onClick={() => dispatch(handleShowCart())}
           className='fixed right-4 ml-auto left-0  md:right-[500px] h-[30px] w-[30px] items-center flex justify-center top-[20px] md:top-[40px] bg-white rounded-[50%]'

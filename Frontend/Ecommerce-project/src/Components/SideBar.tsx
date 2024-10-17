@@ -4,19 +4,44 @@ import Modal from './Modal'
 import { FiX } from 'react-icons/fi'
 import { useAppSelector, useAppDispatch } from '../hooks/hooks'
 import {
+  handleCloseSideBar,
   handleShowCart,
   handleShowSideBar,
 } from '../features/modals/modalSlice'
 import { TiShoppingCart } from 'react-icons/ti'
+import { useEffect, useRef } from 'react'
 
 const SideBar = () => {
   const { showSidebar } = useAppSelector((store) => store.modalSlice)
   const { numOfItemsInCart } = useAppSelector((store) => store.cartSlice)
+  const sideBarRef = useRef<HTMLDivElement>(null)
   const dispatch = useAppDispatch()
+  useEffect(() => {
+    const handleBackdropClick = (e: MouseEvent) => {
+      // Check if the click event target is outside the modal
+      if (
+        sideBarRef.current &&
+        !sideBarRef.current.contains(e.target as Node)
+      ) {
+        dispatch(handleCloseSideBar())
+      }
+    }
+
+    // Attach event listener when modal is open
+    if (showSidebar) {
+      document.addEventListener('mousedown', handleBackdropClick)
+    }
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      document.removeEventListener('click', handleBackdropClick)
+    }
+  }, [showSidebar, dispatch])
   // const [openSideBar, setSideBar] = useState(true)
   return (
     <Modal openModal={showSidebar}>
       <aside
+        ref={sideBarRef}
         className={` transition-transform ease-out duration-300 fixed top-0 right-0 z-50 p-4 gap-6 flex flex-col bg-white h-full max-w-[450px] w-[85%] overflow-y-scroll ${
           showSidebar ? '    translate-x-0 ' : 'translate-x-full '
         }`}

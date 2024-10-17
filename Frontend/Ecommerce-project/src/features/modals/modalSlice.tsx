@@ -17,12 +17,23 @@ const modalSlice = createSlice({
     handleShowSideBar: (state) => {
       state.showSidebar = !state.showSidebar
     },
+    handleCloseSideBar: (state) => {
+      state.showSidebar = false
+    },
     handleShowCart: (state) => {
       state.showCart = !state.showCart
+    },
+    handleCloseCart: (state) => {
+      state.showCart = false
     },
   },
 })
 
-export const { handleShowSideBar, handleShowCart } = modalSlice.actions
+export const {
+  handleShowSideBar,
+  handleShowCart,
+  handleCloseCart,
+  handleCloseSideBar,
+} = modalSlice.actions
 
 export default modalSlice.reducer
