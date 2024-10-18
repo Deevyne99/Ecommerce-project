@@ -17,6 +17,7 @@ const Navbar = () => {
   const dispatch = useAppDispatch()
   const { showCart } = useAppSelector((store) => store.modalSlice)
   const { userProfile } = useAppSelector((store) => store.userSlice)
+  const { numOfItemsInCart } = useAppSelector((store) => store.cartSlice)
 
   return (
     <div>
@@ -28,7 +29,7 @@ const Navbar = () => {
                 <h1>Logo</h1>
               </div>
               <nav>
-                <ul className='md:flex gap-4 items-center hidden'>
+                <ul className='md:flex gap-4 items-center hidden capitalize text-[#1c0f0f]'>
                   <Link to={'/'}>Home</Link>
                   <Link to={'/about'}>about</Link>
                   <Link to={'/products'}>Products</Link>
@@ -41,16 +42,18 @@ const Navbar = () => {
                     className='relative'
                     onClick={() => dispatch(handleShowCart())}
                   >
-                    <div className='absolute top-[-18px] left-[18px] h-[25px] w-[25px] flex justify-center items-center text-sm rounded-[50%] text-white bg-[#3b82f6]'>
-                      1
-                    </div>
+                    {numOfItemsInCart > 0 && (
+                      <div className='absolute top-[-18px] left-[18px] h-[25px] w-[25px] flex justify-center items-center text-sm rounded-[50%] text-white bg-[#3b82f6]'>
+                        {numOfItemsInCart}
+                      </div>
+                    )}
                     <TiShoppingCart className='text-2xl' />
                   </button>
                 </div>
                 {userProfile.user ? (
                   <button onClick={() => dispatch(logoutUser())}>Logout</button>
                 ) : (
-                  <div className='flex gap-6'>
+                  <div className='flex gap-6 capitalize text-[#1c0f0f]'>
                     <Link to={'/register'}>register</Link>
 
                     <Link to={'/login'}>login</Link>

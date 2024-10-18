@@ -8,7 +8,9 @@ import {
 import { useAppDispatch, useAppSelector } from '../hooks/hooks'
 
 const PaginationContainer = () => {
-  const { pagesCount, active } = useAppSelector((state) => state.productSlice)
+  const { pagesCount, active, category } = useAppSelector(
+    (state) => state.productSlice
+  )
   //  const [active, setActive] = useState(1)
   const dispatch = useAppDispatch()
   const numPages = Array.from({ length: pagesCount }, (_, index) => {
@@ -19,7 +21,7 @@ const PaginationContainer = () => {
     // setActive(num)
     dispatch(handleActivePagination(num))
     dispatch(resetProducts())
-    dispatch(getAllProducts({ page: num }))
+    dispatch(getAllProducts({ page: num, category }))
     window.scrollTo(0, 0)
   }
   // console.log(active)
@@ -34,8 +36,8 @@ const PaginationContainer = () => {
             <div key={item}>
               <button
                 onClick={() => handleDataFetch(item)}
-                className={`bg-[#3b82f6] w-[40px] h-[40px] p-2 shadow-md text-[#fff] rounded-md ${
-                  active === item ? 'bg-white   text-[#000]' : ''
+                className={`bg-[#3b82f6] w-[40px] h-[40px] p-2 shadow-md  rounded-md ${
+                  active === item ? 'bg-white   text-[#6b7280] ' : 'text-[#fff]'
                 }`}
               >
                 {item}

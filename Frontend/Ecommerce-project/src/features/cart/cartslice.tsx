@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
-
+import { CartProps } from '../../interfaces/interface'
 import { DefaultStateProps } from '../../interfaces/interface'
+import { toast } from 'react-toastify'
 
 const defaultState: DefaultStateProps = {
   cartItems: [],
@@ -11,45 +12,50 @@ const defaultState: DefaultStateProps = {
   orderTotal: 0,
 }
 
-const getLocalStorage = () => {
-  return JSON.parse(localStorage.getItem('cart') || 'null') || defaultState
-}
+// const getLocalStorage = () => {
+//   return JSON.parse(localStorage.getItem('cart') || 'null') || defaultState
+// }
 
 const cartSlice = createSlice({
   name: 'cartslice',
-  initialState: getLocalStorage(),
+  initialState: defaultState,
   reducers: {
-    addItemToCart: (state, action) => {
-      const { product } = action.payload
-      const item = state.cartItems.find((cart) => cart.id === product.id)
+    addItemToCart: (state, { payload }) => {
+      const { product, amount, price } = payload.product
+
+      const item = state.cartItems.find(
+        (cart: CartProps) => cart.product === product
+      )
+
       if (item) {
-        item.quantity += product.quantity
+        item.amount += amount
       } else {
-        state.cartItems.push(item)
+        state.cartItems.push(payload.product)
       }
-      state.numOfItemsInCart += product.quantity
-      state.cartTotal += product.price * product.quantity
+      state.numOfItemsInCart += amount
+      state.cartTotal += price * amount
       cartSlice.caseReducers.calculateTotals(state)
+      toast.success('Added to cart')
     },
     removeItem: (state, action) => {
-      const { cartID } = action.payload
+      const { product, amount } = action.payload
       //search for the product
-      const product = state.cartItems.find((i) => i.cartID === cartID)
+      const isProduct = state.cartItems.find(
+        (i) => String(i.product) === product
+      )
       //remove the product
-      state.cartItems = state.cartItems.filter((i) => i.cartID !== cartID)
+      if (isProduct) {
+        state.cartItems = state.cartItems.filter(
+          (i) => String(i.product) !== product
+        )
+        toast.success('Deleted Successfully')
+      }
+
+      state.numOfItemsInCart = state.numOfItemsInCart - amount
+      cartSlice.caseReducers.calculateTotals(state)
       //after removing the product from cart
       //remove the number of product from the number of items in cart
-      state.numItemsInCart -= product.quantity
-      //remove the price of product from the price of cartTotal of items in cart
-      state.cartTotal -= product.price * product.quantity
-      //recalculate the orderTotal
-      cartSlice.caseReducers.calculateTotals(state)
-      // toast.error('Item removed from cart')
     },
-    //edit cart
-    // //     editItem:(state,action)=>{
-    // // const {cartID,amount} =  action.payload
-    // // const item = state.cartItems.find((data)=>data.id ===cartID)
 
     //     },
     calculateTotals: (state) => {

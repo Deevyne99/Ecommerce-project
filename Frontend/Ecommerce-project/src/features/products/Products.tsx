@@ -30,7 +30,8 @@ const initialState: ProductsProps = {
     user: '',
   },
   pagesCount: 0,
-  active: 0,
+  active: 1,
+  category: '',
 }
 // const page = 5
 
@@ -38,7 +39,7 @@ export const getAllProducts = createAsyncThunk(
   'products/getAllProducts',
   async (params: QueryParams) => {
     try {
-      const queryString = new URLSearchParams(params as any).toString()
+      const queryString = new URLSearchParams(params as string).toString()
       const { data } = await customFetch.get(
         `/ecommerce/products?${queryString}`
       )
@@ -75,6 +76,7 @@ const productSlice = createSlice({
       state.error = false
       state.loadingAllProducts = false
       state.products = payload.products
+      state.product = payload.products[0]
       state.pagesCount = payload.pages
     })
     builder.addCase(getAllProducts.rejected, (state, { payload }) => {
@@ -111,9 +113,20 @@ const productSlice = createSlice({
     handleActivePagination: (state, { payload }) => {
       state.active = payload
     },
+    handleCategory: (state, { payload }) => {
+      state.category = payload
+    },
+    resetCategory: (state) => {
+      state.category = ''
+    },
   },
 })
 
-export const { resetProducts, handleActivePagination } = productSlice.actions
+export const {
+  resetProducts,
+  handleActivePagination,
+  handleCategory,
+  resetCategory,
+} = productSlice.actions
 
 export default productSlice.reducer

@@ -1,22 +1,60 @@
 import Modal from './Modal'
-import sale from '../assets/sale-8.jpg'
+
 import { RiDeleteBin6Fill } from 'react-icons/ri'
 import { FiX } from 'react-icons/fi'
 import { useAppSelector, useAppDispatch } from '../hooks/hooks'
-import { handleShowCart } from '../features/modals/modalSlice'
-import { Link } from 'react-router-dom'
+import { handleCloseCart, handleShowCart } from '../features/modals/modalSlice'
+import { Link, useNavigate } from 'react-router-dom'
+import { formatPrice } from '../utils'
+import { toast } from 'react-toastify'
+import { removeItem } from '../features/cart/cartslice'
+import { useEffect, useRef } from 'react'
 
 // import React from 'react'
 
 const Cart = () => {
   const { showCart } = useAppSelector((store) => store.modalSlice)
-  const { cartItems } = useAppSelector((store) => store.cartSlice)
+  const { cartItems, cartTotal } = useAppSelector((store) => store.cartSlice)
+  const { userProfile } = useAppSelector((store) => store.userSlice)
+  const navigate = useNavigate()
+  const modalRef = useRef<HTMLDivElement>(null)
 
-  console.log(cartItems)
   const dispatch = useAppDispatch()
+  const handleCheckout = () => {
+    if (userProfile.user) {
+      dispatch(handleShowCart())
+      navigate('/checkout')
+      return
+    }
+    dispatch(handleShowCart())
+    navigate('/login')
+    toast.error('Please login')
+    return
+  }
+  useEffect(() => {
+    const handleBackdropClick = (e: MouseEvent) => {
+      // Check if the click event target is outside the modal
+      if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
+        dispatch(handleCloseCart())
+      }
+    }
+
+    // Attach event listener when modal is open
+    if (showCart) {
+      document.addEventListener('mousedown', handleBackdropClick)
+    }
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      document.removeEventListener('click', handleBackdropClick)
+    }
+  }, [showCart, dispatch])
   return (
     <Modal openModal={showCart}>
-      <div className=' flex flex-col right-0 left-0 mx-auto w-[90%] rounded-md bg-white p-4 fixed gap-4 max-w-[400px] md:mx-0 md:left-auto  md:right-8 top-16 '>
+      <div
+        ref={modalRef}
+        className=' flex flex-col right-0 left-0 mx-auto w-[90%] rounded-md bg-white p-3 fixed gap-4 max-w-[400px] md:mx-0 md:left-auto  md:right-8 top-16 '
+      >
         <button
           onClick={() => dispatch(handleShowCart())}
           className='fixed right-4 ml-auto left-0  md:right-[500px] h-[30px] w-[30px] items-center flex justify-center top-[20px] md:top-[40px] bg-white rounded-[50%]'
@@ -24,107 +62,51 @@ const Cart = () => {
           <FiX />
         </button>
         {cartItems?.length > 0 && (
-          <div className='flex flex-col gap-4 max-h-[500px] overflow-y-scroll'>
-            {/* <div className='flex flex-col text-[#6b7280] font-bold'>
-            <p>Products in your cart</p>
-          </div>
-          <div className='flex gap-2 items-center justify-between'>
-            <div className='w-[60px] h-[60px] md:w-[90px] md:h-[90px]'>
-              <img
-                src={sale}
-                alt=''
-                className='w-full h-full justify-center items-center object-cover object-center'
-              />
+          <div className='flex flex-col gap-4 px-2 max-h-[500px] overflow-y-scroll'>
+            <div className='flex flex-col text-[#6b7280] font-bold'>
+              <p>Products in your cart</p>
             </div>
-            <article className='w-[80%] md:max-w-[350px] flex flex-col gap-1  text-[#6b7280]'>
-              <p>white t shirt</p>
+            {cartItems.map((item) => {
+              const { name, product, price, amount, image } = item
+              return (
+                <div
+                  key={product}
+                  className='flex gap-2 items-center justify-between'
+                >
+                  <div className='w-[60px] h-[60px] md:w-[90px] md:h-[90px]'>
+                    <img
+                      src={image}
+                      alt=''
+                      className='w-full h-full justify-center items-center object-cover object-center'
+                    />
+                  </div>
+                  <article className='w-[80%] md:max-w-[350px] flex flex-col gap-1  text-[#6b7280]'>
+                    <p>{name}</p>
 
-              <p className='text-[#3b82f6] font-bold text-sm'>1 x $329</p>
-            </article>
-            <button className='flex'>
-              <RiDeleteBin6Fill className='text-xl text-red-500' />
-            </button>
-          </div>
-          <div className='flex gap-2 items-center justify-between'>
-            <div className='w-[60px] h-[60px] md:w-[90px] md:h-[90px]'>
-              <img
-                src={sale}
-                alt=''
-                className='w-full h-full justify-center items-center object-cover object-center'
-              />
+                    <p className='text-[#3b82f6] font-bold text-sm'>
+                      {amount} x {formatPrice(price)}
+                    </p>
+                  </article>
+                  <button
+                    onClick={() => dispatch(removeItem({ product, amount }))}
+                    className='flex'
+                  >
+                    <RiDeleteBin6Fill className='text-xl text-red-500' />
+                  </button>
+                </div>
+              )
+            })}
+
+            <div className='flex justify-between text-[#6b7280] font-bold'>
+              <p className='capitalize '>subtotal</p>
+              <p>{formatPrice(cartTotal)}</p>
             </div>
-            <article className='w-[80%] md:max-w-[350px] flex flex-col gap-1  text-[#6b7280]'>
-              <p>white t shirt</p>
-
-              <p className='text-[#3b82f6] font-bold text-sm'>1 x $329</p>
-            </article>
-            <button className='flex'>
-              <RiDeleteBin6Fill className='text-xl text-red-500' />
-            </button>
-          </div>
-          <div className='flex gap-2 items-center justify-between'>
-            <div className='w-[60px] h-[60px] md:w-[90px] md:h-[90px]'>
-              <img
-                src={sale}
-                alt=''
-                className='w-full h-full justify-center items-center object-cover object-center'
-              />
+            <div
+              onClick={() => handleCheckout()}
+              className='p-2 bg-[#3b82f6] text-[#fff] text-center'
+            >
+              Proceed to checkout
             </div>
-            <article className='w-[80%] md:max-w-[350px] flex flex-col gap-1  text-[#6b7280]'>
-              <p>white t shirt</p>
-
-              <p className='text-[#3b82f6] font-bold text-sm'>1 x $329</p>
-            </article>
-            <button className='flex'>
-              <RiDeleteBin6Fill className='text-xl text-red-500' />
-            </button>
-          </div>
-          <div className='flex gap-2 items-center justify-between'>
-            <div className='w-[60px] h-[60px] md:w-[90px] md:h-[90px]'>
-              <img
-                src={sale}
-                alt=''
-                className='w-full h-full justify-center items-center object-cover object-center'
-              />
-            </div>
-            <article className='w-[80%] md:max-w-[350px] flex flex-col gap-1  text-[#6b7280]'>
-              <p>white t shirt</p>
-
-              <p className='text-[#3b82f6] font-bold text-sm'>1 x $329</p>
-            </article>
-            <button className='flex'>
-              <RiDeleteBin6Fill className='text-xl text-red-500' />
-            </button>
-          </div>
-          <div className='flex gap-2 items-center justify-between'>
-            <div className='w-[60px] h-[60px] md:w-[90px] md:h-[90px]'>
-              <img
-                src={sale}
-                alt=''
-                className='w-full h-full justify-center items-center object-cover object-center'
-              />
-            </div>
-            <article className='w-[80%] md:max-w-[350px] flex flex-col gap-1  text-[#6b7280]'>
-              <p>white t shirt</p>
-
-              <p className='text-[#3b82f6] font-bold text-sm'>1 x $329</p>
-            </article>
-            <button className='flex'>
-              <RiDeleteBin6Fill className='text-xl text-red-500' />
-            </button>
-          </div>
-
-          <div className='flex justify-between text-[#6b7280] font-bold'>
-            <p className='capitalize '>subtotal</p>
-            <p>{cartTotal}</p>
-          </div> */}
-            {/* <Link
-            onClick={() => dispatch(handleShowCart())}
-            to='/checkout'
-            className='p-2 bg-[#3b82f6] text-[#fff] text-center'
-          >
-            Proceed to checkout
-          </Link> */}
           </div>
         )}
         {cartItems?.length === 0 && (

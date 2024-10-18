@@ -1,10 +1,10 @@
-interface CartProps {
-  id: string | number
+export interface CartProps {
+  id: string
   image: string
   price: number
   name: string
-  description: string
-  quantity: number
+  amount: number
+  product: string
 }
 
 export interface DefaultStateProps {
@@ -12,7 +12,7 @@ export interface DefaultStateProps {
   numOfItemsInCart: number
   cartTotal: number
   shipping: number
-  tax: 0
+  tax: number
   orderTotal: number
 }
 
@@ -90,4 +90,5 @@ export interface ProductsProps {
   loadingSingleProducts: boolean
   pagesCount: number
   active: number
+  category: string
 }

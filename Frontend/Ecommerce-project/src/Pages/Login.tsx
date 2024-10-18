@@ -1,12 +1,14 @@
 import { useState, ChangeEvent, FormEvent } from 'react'
-import { Link } from 'react-router-dom'
-import { useAppDispatch } from '../hooks/hooks'
+import { Link, useNavigate } from 'react-router-dom'
+import { useAppDispatch, useAppSelector } from '../hooks/hooks'
 import { loginUser } from '../features/user/userSlice'
 import { toast } from 'react-toastify'
 
 const Login = () => {
   const dispatch = useAppDispatch()
+  const { userProfile } = useAppSelector((state) => state.userSlice)
   const [user, setUser] = useState({ email: '', password: '' })
+  const navigate = useNavigate()
 
   const handleInputValue = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
@@ -20,6 +22,9 @@ const Login = () => {
     }
     dispatch(loginUser(user))
     // toast.success('user logged in')
+  }
+  if (userProfile.user) {
+    navigate('/')
   }
   return (
     <div>

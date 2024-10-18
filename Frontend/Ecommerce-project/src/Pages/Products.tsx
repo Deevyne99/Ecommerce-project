@@ -1,9 +1,11 @@
 import CardItem from '../Components/CardItem'
 import { useEffect } from 'react'
 import Footer from '../Components/Footer'
-import { useAppSelector } from '../hooks/hooks'
+import { useAppDispatch, useAppSelector } from '../hooks/hooks'
 import PaginationContainer from '../Components/PaginationContainer'
 import { HashLoader } from 'react-spinners'
+import { getAllProducts } from '../features/products/Products'
+
 // import { getAllProducts } from '../features/products/Products'
 
 // import { data } from '../data'
@@ -11,7 +13,8 @@ import { HashLoader } from 'react-spinners'
 // import React from 'react'
 
 const Products = () => {
-  const { products, loadingAllProducts } = useAppSelector(
+  const dispatch = useAppDispatch()
+  const { products, loadingAllProducts, category, active } = useAppSelector(
     (state) => state.productSlice
   )
   // const dispatch = useAppDispatch()
@@ -19,9 +22,12 @@ const Products = () => {
     window.scrollTo(0, 0)
   }, [])
 
-  // useEffect(() => {
-  //   dispatch(getAllProducts({ page: 0 }))
-  // }, [dispatch, products])
+  useEffect(() => {
+    if (!products || products.length === 0) {
+      dispatch(getAllProducts({ page: active, category }))
+    }
+  }, [dispatch, products, active, category])
+
   if (loadingAllProducts) {
     return (
       <div className='flex  justify-center mx-auto items-center h-screen'>
@@ -35,7 +41,7 @@ const Products = () => {
 
   return (
     <div className='h-screen my-24 flex-col flex '>
-      <div className='flex flex-col mx-4 md:mx-12 '>
+      <div className='flex flex-col mx-4 md:mx-8 '>
         <div className='flex gap-4'>
           {/* <div className=''>
           <h1>Sidebar</h1>
@@ -43,8 +49,11 @@ const Products = () => {
           {/* <div>
           <Features />
         </div> */}
-          <aside className='gap-4  px-2 flex-col md:w-[180px] lg:w-[200px] hidden md:flex'>
+          <aside className='gap-4   flex-col md:w-[140px] lg:w-[200px] hidden md:flex'>
             <h3>Product Categories</h3>
+            <div>
+              <input type='text' className='border p-1 rounded-md w-[95%]' />
+            </div>
             <div className='flex gap-3 items-center'>
               <input type='checkbox' name='Pending' id='' />
               <label
