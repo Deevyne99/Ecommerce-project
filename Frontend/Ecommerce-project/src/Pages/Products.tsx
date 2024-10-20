@@ -50,17 +50,15 @@ const Products = () => {
           <Features />
         </div> */}
           <aside className='gap-4   flex-col md:w-[140px] lg:w-[200px] hidden md:flex'>
-            <h3>Product Categories</h3>
-            <div>
-              <input type='text' className='border p-1 rounded-md w-[95%]' />
-            </div>
+            <h3>Categories</h3>
+
             <div className='flex gap-3 items-center'>
               <input type='checkbox' name='Pending' id='' />
               <label
                 className='text-sm text-[#6b7280] capitalize'
                 htmlFor='Pending'
               >
-                Pending
+                Shirts
               </label>
             </div>
             <div className='flex gap-3 items-center'>
@@ -69,7 +67,7 @@ const Products = () => {
                 className='text-sm text-[#6b7280] capitalize'
                 htmlFor='Pending'
               >
-                Pending
+                Trousers
               </label>
             </div>
             <div className='flex gap-3 items-center'>
@@ -78,7 +76,7 @@ const Products = () => {
                 className='text-sm text-[#6b7280] capitalize'
                 htmlFor='Pending'
               >
-                Pending
+                Shoes
               </label>
             </div>
             <div className='flex gap-3 items-center'>
@@ -87,7 +85,7 @@ const Products = () => {
                 className='text-sm text-[#6b7280] capitalize'
                 htmlFor='Pending'
               >
-                Pending
+                bags
               </label>
             </div>
             <div className='flex gap-3 items-center'>
@@ -96,12 +94,12 @@ const Products = () => {
                 className='text-sm text-[#6b7280] capitalize'
                 htmlFor='Pending'
               >
-                Pending
+                Jackets
               </label>
             </div>
             <div className='flex flex-col gap-2'>
               <h3 className='capitalize text-sm text-[#6b7280] font-semibold'>
-                Salary
+                Prices
               </h3>
               <input
                 type='range'
@@ -114,10 +112,19 @@ const Products = () => {
               <p className='text-sm font-normal text-[#6b7280]'>$3,000</p>
             </div>
           </aside>
-          <div className='grid w-full sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 '>
-            {products.map((product, index) => {
-              return <CardItem item={product} key={index} />
-            })}
+          <div className='flex w-full flex-col '>
+            <div className='w-full md:w-[50%]'>
+              <input
+                type='text'
+                className='border w-full p-2  rounded-md '
+                placeholder='please enter thename of the product'
+              />
+            </div>
+            <div className='grid w-full sm:grid-cols-2 mt-6 md:grid-cols-3 lg:grid-cols-4 gap-12 '>
+              {products.map((product, index) => {
+                return <CardItem item={product} key={index} />
+              })}
+            </div>
           </div>
         </div>
         <div className='mt-16'></div>
