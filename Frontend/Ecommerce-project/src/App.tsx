@@ -11,6 +11,7 @@ import Order from './Pages/Order'
 import Checkout from './Pages/Checkout'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import ProtectedRoutes from './utils/ProtectedRoute'
 
 // import Footer from './Components/Footer'
 
@@ -23,8 +24,25 @@ function App() {
             <Route index element={<Home />} />
             <Route path='/products' element={<Products />} />
             <Route path='/about' element={<About />} />
-            <Route path='/orders' element={<Order />} />
-            <Route path='/checkout' element={<Checkout />} />
+
+            <Route
+              path='/orders'
+              element={
+                <ProtectedRoutes>
+                  <Order />
+                </ProtectedRoutes>
+              }
+            />
+
+            <Route
+              path='/checkout'
+              element={
+                <ProtectedRoutes>
+                  <Checkout />
+                </ProtectedRoutes>
+              }
+            />
+
             <Route path='/product/:id' element={<SingleProduct />} />
           </Route>
           <Route path='/register' element={<Register />} />
