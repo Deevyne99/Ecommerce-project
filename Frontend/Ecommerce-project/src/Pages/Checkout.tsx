@@ -6,7 +6,9 @@ import { removeItem } from '../features/cart/cartslice'
 // import React from 'react'
 
 const Checkout = () => {
-  const { cartItems } = useAppSelector((state) => state.cartSlice)
+  const { cartItems, cartTotal, shipping, tax } = useAppSelector(
+    (state) => state.cartSlice
+  )
   const dispatch = useAppDispatch()
   return (
     <section className='mt-20 flex flex-col mx-4 md:mx-16  items-center '>
@@ -45,11 +47,31 @@ const Checkout = () => {
               )
             })}
           </div>
-          <div>
+          <div className='flex flex-col border p-4 rounded-md'>
             <h2>Order Summary</h2>
+            <div className='flex flex-col'>
+              <div className='flex justify-between mt-4'>
+                <p className='capitalize text-sm'>subtotal</p>
+                <p className=' text-sm'>{formatPrice(cartTotal)}</p>
+              </div>
+              <div className='flex justify-between mt-4'>
+                <p className='capitalize text-sm'>shipping</p>
+                <p className=' text-sm'>{formatPrice(shipping)}</p>
+              </div>
+              <div className='flex justify-between mt-4'>
+                <p className='capitalize text-sm'>tax</p>
+                <p className=' text-sm'>{formatPrice(tax)}</p>
+              </div>
+              <div className='flex justify-between mt-4'>
+                <p className='capitalize text-sm'>total</p>
+                <p className=' text-sm'>
+                  {formatPrice(cartTotal + shipping + tax)}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-        <div></div>
+        <div className='flex  w-[50%]'></div>
       </div>
     </section>
   )

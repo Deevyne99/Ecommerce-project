@@ -88,7 +88,9 @@ const Cart = () => {
                     </p>
                   </article>
                   <button
-                    onClick={() => dispatch(removeItem({ product, amount }))}
+                    onClick={() =>
+                      dispatch(removeItem({ product, amount, price }))
+                    }
                     className='flex'
                   >
                     <RiDeleteBin6Fill className='text-xl text-red-500' />

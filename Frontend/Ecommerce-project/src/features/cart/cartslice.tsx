@@ -38,7 +38,7 @@ const cartSlice = createSlice({
       toast.success('Added to cart')
     },
     removeItem: (state, action) => {
-      const { product, amount } = action.payload
+      const { product, amount, price } = action.payload
       //search for the product
       const isProduct = state.cartItems.find(
         (i) => String(i.product) === product
@@ -49,10 +49,11 @@ const cartSlice = createSlice({
           (i) => String(i.product) !== product
         )
         toast.success('Deleted Successfully')
+        state.numOfItemsInCart = state.numOfItemsInCart - amount
+        state.cartTotal = state.cartTotal - price
+        cartSlice.caseReducers.calculateTotals(state)
       }
 
-      state.numOfItemsInCart = state.numOfItemsInCart - amount
-      cartSlice.caseReducers.calculateTotals(state)
       //after removing the product from cart
       //remove the number of product from the number of items in cart
     },
