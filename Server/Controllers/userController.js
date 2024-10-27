@@ -31,7 +31,7 @@ const showCurrentUser = async (req, res) => {
 
 const updateUser = async (req, res) => {
   const { userId } = req.user
-  const { firstName, lastName, email } = req.body
+  const { name, email } = req.body
   if (!firstName || !lastName || !email) {
     throw new customApiError.BadRequestError('Please Enter your credentials')
   }
@@ -39,9 +39,7 @@ const updateUser = async (req, res) => {
   if (!user) {
     throw new customApiError.NotFoundError(`No user with the id ${userId}`)
   }
-  ;(user.firstName = firstName),
-    (user.lastName = lastName),
-    (user.email = email)
+  ;(user.name = name), (user.email = email)
   await user.save()
 
   const tokenUser = createTokenUser(user)

@@ -1,0 +1,506 @@
+[
+  {
+    "name": "Geometric crochet shirt",
+    "price": 2990,
+    "color": ["#E1C16E", "#DAA06D"],
+    "description": "Relaxed fit shirt made of open textured fabric, Lapel collar and short sleeves. Buttons up-front comes in two different colors ",
+    "image": "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723751/ecommerce-project/c424e5a9109e228894060e046ffd415c_dq7zva.jpg",
+    "images": [
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1726724134/ecommerce-project/f702a072660aea318616c04b97ccb452_vou5np.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723742/ecommerce-project/bb515aa2895200a2449360e5ea27070f_mbbtp8.jpg"
+    ],
+    "category": "shirts",
+    "freeShipping": false,
+    "inventory": 15,
+    "user": "665ca480fbaef37c0695a56e"
+  },
+
+  {
+    "name": "Adidas Handball Spezial Earth Strata",
+    "price": 6000,
+    "color": ["#E1C16E", "#DAA06D"],
+    "description": "Relaxed fit shoe made of good quality material, they are light and comfortable. They come in two different colors ",
+    "image": "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723655/ecommerce-project/616ba363a541089975e618a1a9b3e094_t1x84o.jpg",
+    "images": [
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723598/ecommerce-project/15e3f8ea047d6257630eccbfa636f496_tokytv.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723639/ecommerce-project/90dc742ad061aa6d7841fdac5de5a01e_ejdcsr.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723690/ecommerce-project/78869b1dd2bfbca7bf80dd859b13b847_mceyuk.jpg"
+    ],
+    "category": "shoes",
+    "freeShipping": false,
+    "inventory": 14,
+    "user": "665ca480fbaef37c0695a56e"
+  },
+  {
+    "name": "Flowered shirt",
+    "price": 500,
+    "color": ["#a2cffe"],
+    "description": "Relaxed fit flowered shirt  made of cotton, it comes in a single color and the sizes vary",
+    "image": "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723643/ecommerce-project/95ce8a5b7907868e4bcedb01bd330183_pugmgi.jpg",
+    "images": [
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723582/ecommerce-project/8d34bbbc49e3caf6ad382454ccbc7f1a_oeq4wp.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723741/ecommerce-project/ba317f7a7f4fb32ad76466b6205f3184_wwl0tt.jpg"
+    ],
+    "category": "shirts",
+    "freeShipping": false,
+    "inventory": 10,
+    "user": "665ca480fbaef37c0695a56e"
+  },
+  {
+    "name": "Ladies Jean three quarter",
+    "price": 500,
+    "color": ["#ccc"],
+    "description": "Relaxed fit ladies jean , it comes in a single color and the sizes vary",
+    "image": "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723731/ecommerce-project/af78ca2414d4d22700ac8da56a437731_xizcvh.jpg",
+    "images": [
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723658/ecommerce-project/730b249a65a6eb035e38e5df92b158bf_xzxx0r.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723741/ecommerce-project/ba317f7a7f4fb32ad76466b6205f3184_wwl0tt.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723722/ecommerce-project/a8b93dffbbe44fb0d3d5fe817f319009_fmj85b.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723718/ecommerce-project/44671896351bca0e681b332944feeb37_hsvqqy.jpg"
+    ],
+    "category": "trousers",
+    "freeShipping": false,
+    "inventory": 10,
+    "user": "665ca480fbaef37c0695a56e"
+  },
+  {
+    "name": "New Balance 1906R ",
+    "price": 500,
+    "color": ["#808080"],
+    "description": "Relaxed fit ladies jean , it comes in a single color and the sizes vary",
+    "image": "https://res.cloudinary.com/dbm6niakh/image/upload/v1727290281/ecommerce-project/d0a4c2ffe380da14926d981351c47e2d_ghalgt.jpg",
+    "images": [
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727290338/ecommerce-project/f5a220df619d5f64498f60dfa9694b29_fhkc5w.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727290316/ecommerce-project/e925f4caa03fbf448698bea99b68c36e_kaoshm.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727290243/ecommerce-project/b219fcb89e41c8dea58fc6e16250f3d2_hoovye.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727290260/ecommerce-project/cb3faa2a8e83756fa5275d699c8d40f5_lvc43p.jpg"
+    ],
+    "category": "shoes",
+    "freeShipping": false,
+    "inventory": 10,
+    "user": "665ca480fbaef37c0695a56e"
+  },
+  {
+    "name": "Ladies Jean ",
+    "price": 500,
+    "color": ["#"],
+    "description": "Relaxed fit ladies jean , it comes in a single color and the sizes vary",
+    "image": "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723689/ecommerce-project/75688a57c19fbfa2ddd4bbc5e004c5c4_gc5zyy.jpg",
+    "images": [
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723702/ecommerce-project/1021777c7f6abb7b4f7f0f2a4ecce4be_n26m5u.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723689/ecommerce-project/75688a57c19fbfa2ddd4bbc5e004c5c4_gc5zyy.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723722/ecommerce-project/a8b93dffbbe44fb0d3d5fe817f319009_fmj85b.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723718/ecommerce-project/44671896351bca0e681b332944feeb37_hsvqqy.jpg"
+    ],
+    "category": "trousers",
+    "freeShipping": false,
+    "inventory": 10,
+    "user": "665ca480fbaef37c0695a56e"
+  },
+  {
+    "name": "Embroidered cap",
+    "price": 500,
+    "color": ["#097969"],
+    "description": "Relaxed fit cap made of cotton, the size can be increased or decreased to fit your size.",
+    "image": "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723672/ecommerce-project/5121b3f0951bbafcdd4b94923bb52d98_qyjuxj.jpg",
+    "images": [
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723713/ecommerce-project/76047261a95a4fbb138de33cd72901cb_rw4azm.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723672/ecommerce-project/5121b3f0951bbafcdd4b94923bb52d98_qyjuxj.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723637/ecommerce-project/87c04585ff843c41686977f00bf66fa4_z5fepc.jpg"
+    ],
+    "category": "caps",
+    "freeShipping": false,
+    "inventory": 14,
+    "user": "665ca480fbaef37c0695a56e"
+  },
+  {
+    "name": "2Y Premium Loose fit Jeans",
+    "price": 2000,
+    "color": ["#6F8FAF"],
+    "description": "Relaxed fit jean , elastic and elegant. Buttons up-front comes in one different colors ",
+    "image": "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723590/ecommerce-project/9b289fb88792a71c2d61946095fa71d3_zodbmo.jpg",
+    "images": [
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723592/ecommerce-project/9ce5f1dec6d5a89942a500bb63c98445_n9nfcn.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723545/ecommerce-project/2ab775e3e63640aca12b0df8d9800cf6_xmjst9.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723604/ecommerce-project/25b4d243511c26b8ac8ea42a3e415796_cbq41n.jpg"
+    ],
+    "category": "shirts",
+    "freeShipping": false,
+    "inventory": 14,
+    "user": "665ca480fbaef37c0695a56e"
+  },
+  {
+    "name": "Adidas Handball Spezial Earth Strata",
+    "price": 1000,
+    "color": ["#E1C16E", "#DAA06D"],
+    "description": "Relaxed fit shoe made of good quality material, they are light and comfortable. They come in two different colors ",
+    "image": "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723646/ecommerce-project/275ca1a3b2aad3f7b8f2d3c4d4caa2ec_hsemhe.jpg",
+    "images": [
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723578/ecommerce-project/7fb58e45c760ca0436a1508122e909ba_iqk0xj.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723544/ecommerce-project/2d51fc25fbd204d0b6578b5894c0f043_jjo1ft.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723550/ecommerce-project/3d39e4b9616ffe17f3595da7026af2fe_nwige6.jpg"
+    ],
+    "category": "shoes",
+    "freeShipping": false,
+    "inventory": 14,
+    "user": "665ca480fbaef37c0695a56e"
+  },
+  {
+    "name": "Crochet Collar Short Sleeve Jumper",
+    "price": 200,
+    "color": ["#BEE4F4", "#239ED0"],
+    "description": "Relaxed fit shirt made of cotton strip, Lapel collar and long sleeves. Buttons up-front comes in two different colors ",
+    "image": "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723701/ecommerce-project/604009fedfbd8523644e6269dbf636d3_byh2qw.jpg",
+    "images": [
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723786/ecommerce-project/e4cffef7a846e66712fde52b006c7f96_wyhpvn.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1726724128/ecommerce-project/f8af11e694ecc9b94a0299afcd6ae55b_wiexhi.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723799/ecommerce-project/e8430000f197424f87028770ea74ff2e_dumxd7.jpg"
+    ],
+    "category": "shirts",
+    "freeShipping": false,
+    "inventory": 14,
+    "user": "665ca480fbaef37c0695a56e"
+  },
+  {
+    "name": "Belted trench coat",
+    "price": 2000,
+    "color": ["#e7e5e4", "#44403c"],
+    "description": "Relaxed fit shirt made of cotton strip, Lapel collar and long sleeves. Buttons up-front comes in two different colors ",
+    "image": "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723556/ecommerce-project/4f65196ed80521275a1d3cd11f0eab85_nrz3ls.jpg",
+    "images": [
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723555/ecommerce-project/4a8a2698d8f738f04bf38b3a130e518b_qffrz5.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723556/ecommerce-project/4f65196ed80521275a1d3cd11f0eab85_nrz3ls.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723555/ecommerce-project/4a8a2698d8f738f04bf38b3a130e518b_qffrz5.jpg"
+    ],
+    "category": "shirts",
+    "freeShipping": false,
+    "inventory": 14,
+    "user": "665ca480fbaef37c0695a56e"
+  },
+
+  {
+    "name": "New Balance Ladies white",
+    "price": 4000,
+    "color": ["#fff", "#DAA06D"],
+    "description": "Relaxed fit shoe made of good quality material, they are light and comfortable. They come in two different colors ",
+    "image": "https://res.cloudinary.com/dbm6niakh/image/upload/v1727290317/ecommerce-project/eaed4fe318369037f9c55defb6c666eb_ejxpyu.jpg",
+    "images": [
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727290203/ecommerce-project/41024040e6e96b24a4dc22eab9891fbd_inkk37.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727290184/ecommerce-project/5048d49c9d42cb1542d75229aace5060_vsiagl.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727290157/ecommerce-project/50e604e16a7028b3f70192d7940a628d_tkxwzi.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727290097/ecommerce-project/3cc7b527d1b70049226a5f8becbc0d7a_rox574.jpg"
+    ],
+    "category": "shoes",
+    "freeShipping": false,
+    "inventory": 8,
+    "user": "665ca480fbaef37c0695a56e"
+  },
+  {
+    "name": "Jean Jacket",
+    "price": 2000,
+    "color": ["#075985", "#0c4a6e"],
+    "description": "Relaxed fit jacket made of jean quality material, they are light and comfortable. They come in two different colors ",
+    "image": "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723784/ecommerce-project/dfe0c58877e67071e681ed99a15c0687_vdjrgv.jpg",
+    "images": [
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723767/ecommerce-project/d67c03fff3a12cb3b0c4db4a6ecd98e3_mwrkuf.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723594/ecommerce-project/9e8410f2bccdc56bbd3dbe6893859db3_z38t0j.jpg"
+    ],
+    "category": "shirts",
+    "freeShipping": false,
+    "inventory": 8,
+    "user": "665ca480fbaef37c0695a56e"
+  },
+  {
+    "name": "Ash Jean",
+    "price": 2000,
+    "color": ["#075985", "#0c4a6e"],
+    "description": "Relaxed fit shirt made of cotton quality material, they are light and comfortable. They come in two different colors ",
+    "image": "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723567/ecommerce-project/06d64bfc4eaa20737ed01a7e1cd6cd99_jitoxs.jpg",
+    "images": [
+      "",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723587/ecommerce-project/09d064c07dd935588f0119f95ad3a67e_jzakly.jpg"
+    ],
+    "category": "trousers",
+    "freeShipping": false,
+    "inventory": 8,
+    "user": "665ca480fbaef37c0695a56e"
+  },
+
+  {
+    "name": "Applique Brown wash jeans",
+    "price": 300,
+    "color": ["#E1C16E", "#DAA06D"],
+    "description": "Comfortable jean trouser, with very exquisite designs.  It comes in two different colors ",
+    "image": "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723624/ecommerce-project/46f0137f50673a0a81e0fb551cdccae8_wqeeys.jpg",
+    "images": [
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1726724129/ecommerce-project/f39ec56ae33659d7a752e234feb50a56_ltfret.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723773/ecommerce-project/d81740d99bf7db273e86a64469511bc9_qemlsq.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723745/ecommerce-project/bc1e7c31562860231401d4d39b405dd4_zrfjft.jpg"
+    ],
+    "category": "trousers",
+    "freeShipping": false,
+    "inventory": 14,
+    "user": "665ca480fbaef37c0695a56e"
+  },
+  {
+    "name": "Nike Air Jordan 1",
+    "price": 3000,
+    "color": ["#38bdf8"],
+    "description": "Low men's casual sneakers, with very exquisite designs.  It comes in a single color ",
+    "image": "https://res.cloudinary.com/dbm6niakh/image/upload/v1727290124/ecommerce-project/8cbe9b2f08c4f49b79f3e343489c4190_gdnspg.jpg",
+    "images": [
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727290260/ecommerce-project/c7b7f0ca6012743be608714c239d0812_mbawm4.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727290219/ecommerce-project/62916184677605233f0bc65d24049469_hlojdc.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727290185/ecommerce-project/0038956e141edbc4441cef1bacbc6abe_kjdbqe.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727290344/ecommerce-project/fe6655b15996a9c78d3b6c1a005221a5_ttrent.jpg"
+    ],
+    "category": "shoes",
+    "freeShipping": false,
+    "inventory": 14,
+    "user": "665ca480fbaef37c0695a56e"
+  },
+  {
+    "name": "Nike Air Jordan 1",
+    "price": 3000,
+    "color": ["#38bdf8"],
+    "description": "Low men's casual sneakers, with very exquisite designs.  It comes in a single color ",
+    "image": "https://res.cloudinary.com/dbm6niakh/image/upload/v1727443324/ecommerce-project/3f9a718f3e0b9a5a654aac471d12e9b5_ugn7gh.jpg",
+    "images": [
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727443376/ecommerce-project/9f47aa5e524d40f8889906f8d335fd8c_sr387s.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727290219/ecommerce-project/62916184677605233f0bc65d24049469_hlojdc.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727290185/ecommerce-project/0038956e141edbc4441cef1bacbc6abe_kjdbqe.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727290344/ecommerce-project/fe6655b15996a9c78d3b6c1a005221a5_ttrent.jpg"
+    ],
+    "category": "shoes",
+    "freeShipping": false,
+    "inventory": 14,
+    "user": "665ca480fbaef37c0695a56e"
+  },
+  {
+    "name": "Face cap",
+    "price": 3000,
+    "color": ["#38bdf8"],
+    "description": "Low men's casual sneakers, with very exquisite designs.  It comes in a single color ",
+    "image": "https://res.cloudinary.com/dbm6niakh/image/upload/v1727443618/ecommerce-project/c9fe853f726a30dcc4d881b17a3ba3a2_xhwprz.jpg",
+    "images": [
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727443447/ecommerce-project/73fb4864b35837fd3c330df10a2fdfa9_kvtn2u.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727443362/ecommerce-project/6f7382146c96346207a1b781cba48f88_o8uv1o.jpg"
+    ],
+    "category": "caps",
+    "freeShipping": false,
+    "inventory": 14,
+    "user": "665ca480fbaef37c0695a56e"
+  },
+
+  {
+    "name": "Crochet Collar Short Sleeve Jumper",
+    "price": 350,
+    "color": ["#E1C16E", "#DAA06D"],
+    "description": "Relaxed fit shirt made of wool, collar and short sleeves. Buttons up-front comes in two different colors ",
+    "image": "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723761/ecommerce-project/d4a02e4fbc15fedea0623a565075df8a_amyzjl.jpg",
+    "images": [
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723758/ecommerce-project/d1f86e343df9f8b328430942531a2833_xkxtdm.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723757/ecommerce-project/cdd47a3684432b4c7a55cb49cdcdbcfe_idbhkn.jpg"
+    ],
+    "category": "shirts",
+    "freeShipping": false,
+    "inventory": 14,
+    "user": "665ca480fbaef37c0695a56e"
+  },
+  {
+    "name": "Nike Air Jordans",
+    "price": 3500,
+    "color": ["#c2410c", "#DAA06D"],
+    "description": "Relaxed fit shoe made of quality material. it comes in one color ",
+    "image": "https://res.cloudinary.com/dbm6niakh/image/upload/v1727290282/ecommerce-project/d9b898d380b0c0cff65457290a540430_yywpyz.jpg",
+    "images": [
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727290186/ecommerce-project/1364fbad6a1b5fb566a6688cf6372033_eqeimk.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727290176/ecommerce-project/988f2774c0f303af48e034c52f7e6885_zzsxsk.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727290125/ecommerce-project/9b696fb8189a6ea99aead38d86451485_fb2dfh.jpg"
+    ],
+    "category": "shoes",
+    "freeShipping": false,
+    "inventory": 14,
+    "user": "665ca480fbaef37c0695a56e"
+  },
+  {
+    "name": "Black Jacket",
+    "price": 3500,
+    "color": ["#000"],
+    "description": "Relaxed fit jacket made of quality material. it comes in one color ",
+    "image": "https://res.cloudinary.com/dbm6niakh/image/upload/v1727443324/ecommerce-project/5eadbe214b3e05af7c3d97d9c4900a36_nxgjiv.jpg",
+    "images": [
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727443376/ecommerce-project/9d0511fc835a3a4e90504e4c5dbcbc22_goi4eg.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727443324/ecommerce-project/5b022fc03004c7bc53259b618c3dc9bd_ehy7ge.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727443617/ecommerce-project/bf2c6a19e744f2dbe4d546ecae10fb06_ub3vew.jpg"
+    ],
+    "category": "jackets",
+    "freeShipping": false,
+    "inventory": 14,
+    "user": "665ca480fbaef37c0695a56e"
+  },
+  {
+    "name": "Army Jacket",
+    "price": 3500,
+    "color": ["#454B1B"],
+    "description": "Relaxed fit jacket made of quality material. it comes in one color ",
+    "image": "https://res.cloudinary.com/dbm6niakh/image/upload/v1727443513/ecommerce-project/09960f5c7938a7434398b9b86999ae7a_pr1as1.jpg",
+    "images": [
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727443474/ecommerce-project/171cc70a2c103289b31fd368c459cfc0_fymhok.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727443393/ecommerce-project/18fcdf84a81025f13d9e6fd502dc2f20_tangn8.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727443376/ecommerce-project/10bfeb77ebdfd32d12131d3445efeee6_laiu3e.jpg"
+    ],
+    "category": "jackets",
+    "freeShipping": false,
+    "inventory": 14,
+    "user": "665ca480fbaef37c0695a56e"
+  },
+
+  {
+    "name": "Evfer women winter fashion",
+    "price": 2000,
+    "color": ["#fff", "#86efac"],
+    "description": "Relaxed fit shoe made of good quality material, they are light and comfortable. They come in two different colors ",
+    "image": "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723536/ecommerce-project/1a79dc72180be5dbeed6b181f6a053a9_ycqqvv.jpg",
+    "images": [
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723563/ecommerce-project/5d66a8805a717673ba3af1de7d7109aa_pqttmc.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723564/ecommerce-project/5e380aa005c881ee10fa54ac8a5fcb17_bliy5j.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723626/ecommerce-project/61e43129b3004152283e44506104bcfe_iu5tef.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723564/ecommerce-project/5e380aa005c881ee10fa54ac8a5fcb17_bliy5j.jpg"
+    ],
+    "category": "shirts",
+    "freeShipping": false,
+    "inventory": 8,
+    "user": "665ca480fbaef37c0695a56e"
+  },
+  {
+    "name": "New Balance Unisex",
+    "price": 2000,
+    "color": ["#fff", "#DAA06D"],
+    "description": "Relaxed fit shoe made of good quality material, they are light and comfortable. They come in two different colors ",
+    "image": "https://res.cloudinary.com/dbm6niakh/image/upload/v1727290097/ecommerce-project/2e05a895c406acd0776e8806ec39dec7_iied3e.jpg",
+    "images": [
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727290157/ecommerce-project/66a74c5e2494d3ab06430d0589e4e9cf_nlcuma.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727290097/ecommerce-project/0a7d0bfdb67986e8fba07eed6d36cb66_f2qtzp.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727290140/ecommerce-project/30f834f8c3649d0a5603fda2cbe84098_ihnoqo.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727290097/ecommerce-project/2e05a895c406acd0776e8806ec39dec7_iied3e.jpg"
+    ],
+    "category": "shoes",
+    "freeShipping": false,
+    "inventory": 8,
+    "user": "665ca480fbaef37c0695a56e"
+  },
+  {
+    "name": "Female hand bag",
+    "price": 2000,
+    "color": ["#b45309", "#a16207"],
+    "description": "Relaxed fit bag made of good quality leather, they are light and comfortable. They come in two different colors ",
+    "image": "https://res.cloudinary.com/dbm6niakh/image/upload/v1727443685/ecommerce-project/e7d9264d8d25ea145fb8d824003cd563_vrlwg0.jpg",
+    "images": [
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727443475/ecommerce-project/275eb8751e45b2f3766d77b8832d9a1f_hnigl1.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727443454/ecommerce-project/94c6bfd048926e48bbcc61226ab87a45_yhv9ku.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727443323/ecommerce-project/1d85c7b50d881cf359ef93f51f18897e_yttalv.jpg"
+    ],
+    "category": "bags",
+    "freeShipping": false,
+    "inventory": 8,
+    "user": "665ca480fbaef37c0695a56e"
+  },
+  {
+    "name": "Sweat Shirt",
+    "price": 2000,
+    "color": ["#e7e5e4", "#44403c"],
+    "description": "Relaxed fit shirt made of cotton strip, Lapel collar and long sleeves. Buttons up-front comes in two different colors ",
+    "image": "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723767/ecommerce-project/d82a2c3e08ec12a092f2e5c5461bbeda_lapull.jpg",
+    "images": [
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723719/ecommerce-project/602712986530f395e52d4c96223ec3a9_bxsnh8.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723648/ecommerce-project/329e346a66ba8840757e9dc5d5affc78_zsrkop.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723609/ecommerce-project/31eb94dfe44f0080c924273da984f850_pwjvhz.jpg"
+    ],
+    "category": "shirts",
+    "freeShipping": false,
+    "inventory": 14,
+    "user": "665ca480fbaef37c0695a56e"
+  },
+  {
+    "name": "Laptop bag",
+    "price": 2000,
+    "color": ["#6b7280", "#000"],
+    "description": "Relaxed fit bag made of quality material, it comes in two different colors ",
+    "image": "https://res.cloudinary.com/dbm6niakh/image/upload/v1727443475/ecommerce-project/314f07a0a3fd1763e8b2edf58f8ceaed_rx2vsm.jpg",
+    "images": [
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727443557/ecommerce-project/8401878e961a4dbf9bacb33fd4999ed9_e4lb3h.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727443455/ecommerce-project/107e304d19f1904aca6b78206355ecd3_irbeef.jpg"
+    ],
+    "category": "bags",
+    "freeShipping": false,
+    "inventory": 14,
+    "user": "665ca480fbaef37c0695a56e"
+  },
+  {
+    "name": "Round neck Shirt",
+    "price": 200,
+    "color": ["#e7e5e4", "#44403c"],
+    "description": "Relaxed fit shirt made of cotton strip, Lapel collar and long sleeves. Buttons up-front comes in two different colors ",
+    "image": "https://res.cloudinary.com/dbm6niakh/image/upload/v1727443735/ecommerce-project/f472024c98d51096b0fe409aeab7f330_rf2j60.jpg",
+    "images": [
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727443710/ecommerce-project/f3f4dd794bc82830901036fa50e4e1f6_izoros.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723648/ecommerce-project/329e346a66ba8840757e9dc5d5affc78_zsrkop.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1726723609/ecommerce-project/31eb94dfe44f0080c924273da984f850_pwjvhz.jpg"
+    ],
+    "category": "shirts",
+    "freeShipping": false,
+    "inventory": 14,
+    "user": "665ca480fbaef37c0695a56e"
+  },
+  {
+    "name": "Ladies milk bag",
+    "price": 2000,
+    "color": ["#fffbeb"],
+    "description": "Relaxed fit bag made of quality material, Lapel collar and long sleeves.  comes in a  single color ",
+    "image": "https://res.cloudinary.com/dbm6niakh/image/upload/v1727443642/ecommerce-project/d00fb345dad69b34b0736811ff2dcbec_pvwkgl.jpg",
+    "images": [
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727443558/ecommerce-project/598606404208a5132511bc06d36d0722_fqjvxh.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727443539/ecommerce-project/361407b905b4aead1d18efe171edce12_l7ciff.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727443475/ecommerce-project/0452b88d81cd3ac51ca5893581c921ca_xf9klf.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727443475/ecommerce-project/0452b88d81cd3ac51ca5893581c921ca_xf9klf.jpg"
+    ],
+    "category": "bags",
+    "freeShipping": false,
+    "inventory": 14,
+    "user": "665ca480fbaef37c0695a56e"
+  },
+  {
+    "name": "Adidas Campus",
+    "price": 2500,
+    "color": ["#e7e5e4", "#44403c"],
+    "description": "Relaxed fit shoe  made of cotton strip, . Available in one single color ",
+    "image": "https://res.cloudinary.com/dbm6niakh/image/upload/v1727290281/ecommerce-project/d73835c8b8d928aecea54fe1e8c939a3_d6yzut.jpg",
+    "images": [
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727290261/ecommerce-project/cf93af929c059a57a1de08004fcbb993_xzxuaf.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727290260/ecommerce-project/c812c255829b55fdebf361e0eaf8f42f_hc2fzj.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727290200/ecommerce-project/01802703da790a6a07d525c0514f3621_uc67eh.jpg"
+    ],
+    "category": "shoes",
+    "freeShipping": false,
+    "inventory": 14,
+    "user": "665ca480fbaef37c0695a56e"
+  },
+  {
+    "name": "Leather Jacket",
+    "price": 2500,
+    "color": ["#7c2d12", "#44403c"],
+    "description": "Relaxed fit jacket  made of leather. Available in one single color ",
+    "image": "https://res.cloudinary.com/dbm6niakh/image/upload/v1727443736/ecommerce-project/fdba91ba30ff64d0f756fb4fe87b2641_bkbfwi.jpg",
+    "images": [
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727443665/ecommerce-project/dda48db7ad83292d8c90cde050f73ab3_wudty3.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727443641/ecommerce-project/c504218fb660316829e0182cdd7eeea7_scldp5.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727443513/ecommerce-project/25391ba349a9af259d4997bb9d9e1bd3_odppe5.jpg",
+      "https://res.cloudinary.com/dbm6niakh/image/upload/v1727443394/ecommerce-project/45f876b497754cf750dda64a0a7707ee_eu8pgo.jpg"
+    ],
+    "category": "jackets",
+    "freeShipping": false,
+    "inventory": 14,
+    "user": "665ca480fbaef37c0695a56e"
+  }
+]

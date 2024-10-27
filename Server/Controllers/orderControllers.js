@@ -3,22 +3,30 @@ const { StatusCodes } = require('http-status-codes')
 const Products = require('../Models/products')
 const Order = require('../Models/Order')
 const { checkPermission } = require('../Utils/')
+require('dotenv').config()
+const stripe = require('stripe')(process.env.STRIPE_SECRET)
 
 const fakeStripeAPI = async ({ amount, currency }) => {
   const client_secret = 'someRandomValue'
   return { client_secret, amount }
 }
 
+const calculateTotal = ({ subTotal, shippingFee }) => {
+  const tax = 0.1 * subTotal
+  const total = tax + subTotal + parseInt(shippingFee)
+
+  return total
+}
+
 const createOrder = async (req, res) => {
-  const { items: cartItems, tax, shippingFee } = req.body
+  const { items: cartItems, shipping: shippingFee } = req.body
+  console.log(cartItems)
 
   if (!cartItems || cartItems.length < 1) {
     throw new customApiErrors.BadRequestError('No cart items Provided')
   }
-  if (!tax || shippingFee) {
-    throw new customApiErrors.BadRequestError(
-      'Please provide tax and shipping Fee'
-    )
+  if (!shippingFee) {
+    throw new customApiErrors.BadRequestError('Please provide  shipping Fee')
   }
 
   let orderItems = []
@@ -35,24 +43,28 @@ const createOrder = async (req, res) => {
     const singleOrderitem = { amount: item.amount, name, price, image, _id }
     //add item to orderItem array
     orderItems = [...orderItems, singleOrderitem]
-    subtotal = item.amount * price
+    subtotal += item.amount * parseInt(price)
   }
 
   // calculate total
-  const total = tax + shippingFee + subtotal
+
+  const total = calculateTotal({ subTotal: subtotal, shippingFee })
   // get client secret
-  const paymentIntent = await fakeStripeAPI({
+  const paymentIntent = await stripe.paymentIntents.create({
     amount: total,
     currency: 'usd',
+    automatic_payment_methods: {
+      enabled: true,
+    },
   })
 
   const order = await Order.create({
     orderItems,
     total,
     subtotal,
-    tax,
     shippingFee,
     clientSecret: paymentIntent.client_secret,
+    paymentIntentId: paymentIntent.id,
     user: req.user.userId,
   })
 

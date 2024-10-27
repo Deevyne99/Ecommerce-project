@@ -4,14 +4,14 @@ const User = require('../Models/users')
 const { attachCookiesToResponse, createTokenUser } = require('../Utils')
 
 const registerUser = async (req, res) => {
-  const { firstName, lastName, email, password } = req.body
+  const { name, email, password } = req.body
   const emailExist = await User.findOne({ email })
   if (emailExist) {
     throw new customApiError.BadRequestError('Email already Exist')
   }
   const isFirstAccount = (await User.countDocuments({})) === 0
   const role = isFirstAccount ? 'Admin' : 'User'
-  const user = await User.create({ firstName, lastName, email, password, role })
+  const user = await User.create({ name, email, password, role })
   const tokenUser = createTokenUser(user)
   attachCookiesToResponse({ res, user: tokenUser })
 
