@@ -8,16 +8,11 @@ const SingleOrderItemSchema = mongoose.Schema({
   product: {
     type: mongoose.Schema.ObjectId,
     ref: 'Products',
-    required: true,
   },
 })
 
 const OrderSchema = mongoose.Schema(
   {
-    tax: {
-      type: Number,
-      required: true,
-    },
     shippingFee: {
       type: Number,
       required: true,
