@@ -5,6 +5,7 @@ import { useAppDispatch, useAppSelector } from '../hooks/hooks'
 import PaginationContainer from '../Components/PaginationContainer'
 import { HashLoader } from 'react-spinners'
 import { getAllProducts } from '../features/products/Products'
+import { IoMdSearch } from 'react-icons/io'
 
 // import { getAllProducts } from '../features/products/Products'
 
@@ -113,12 +114,15 @@ const Products = () => {
             </div>
           </aside>
           <div className='flex w-full flex-col '>
-            <div className='w-full md:w-[50%]'>
+            <div className='w-full md:w-[80%] flex '>
               <input
                 type='text'
-                className='border w-full p-2  rounded-md '
+                className='border w-full p-2 rounded-r-none rounded-md focus:#3b82f6'
                 placeholder='please enter thename of the product'
               />
+              <button className='flex justify-center items-center bg-[#3b82f6] text-white w-[50px] p-2 rounded-r-md'>
+                <IoMdSearch className='text-xl' />
+              </button>
             </div>
             <div className='grid w-full sm:grid-cols-2 mt-6 md:grid-cols-3 lg:grid-cols-4 gap-12 '>
               {products.map((product, index) => {
