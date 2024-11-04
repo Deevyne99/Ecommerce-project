@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
-import { customFetch } from '../../utils'
+import { customFetch, customFetchOrder } from '../../utils'
 
 interface SingleOrderProps {
   name: string
@@ -37,7 +37,7 @@ export const createOrder = createAsyncThunk(
     cartItems: SingleOrderProps[]
   }) => {
     try {
-      const { data } = await customFetch.post(
+      const { data } = await customFetchOrder.post(
         '/ecommerce/orders',
 
         {
