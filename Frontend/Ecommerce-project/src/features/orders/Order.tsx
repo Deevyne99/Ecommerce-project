@@ -43,7 +43,8 @@ export const createOrder = createAsyncThunk(
         {
           shipping,
           cartItems,
-        }
+        },
+        { withCredentials: true }
       )
       return data
     } catch (error) {
