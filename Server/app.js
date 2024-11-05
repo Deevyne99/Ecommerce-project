@@ -27,7 +27,11 @@ const app = express()
 
 //+++++++++++++++++++++++++++++++Middleware++++++++++++++++++++++++++++++++++++++++
 app.use(helmet())
-app.use(cors())
+app.use(
+  cors({
+    credentials: true,
+  })
+)
 app.use(xss())
 
 app.set('trust proxy', 1)

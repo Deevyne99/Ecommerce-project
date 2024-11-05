@@ -4,8 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js",
-    "proxy": "http://localhost:"
+    "start": "nodemon app.js"
+    
   },
   "author": "",
   "license": "ISC",
