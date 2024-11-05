@@ -3,6 +3,8 @@ import { useAppSelector, useAppDispatch } from '../hooks/hooks'
 import { formatPrice } from '../utils'
 import { removeItem } from '../features/cart/cartslice'
 
+import StripeCheckout from './StripePayment'
+
 // import React from 'react'
 
 const Checkout = () => {
@@ -12,8 +14,8 @@ const Checkout = () => {
   const dispatch = useAppDispatch()
   return (
     <section className='mt-20 flex flex-col mx-4 md:mx-16  items-center '>
-      <div className='flex justify-between  w-full'>
-        <div className='flex flex-col w-[50%] gap-6  py-8 px-4'>
+      <div className='flex justify-between flex-col md:flex-row  w-full'>
+        <div className='flex flex-col w-full  md:w-[50%] gap-6  py-8 px-4'>
           <h2 className='capitalize text-2xl'>your order</h2>
           <div className='flex flex-col gap-8 border rounded-md p-4'>
             {cartItems.map((item) => {
@@ -71,7 +73,9 @@ const Checkout = () => {
             </div>
           </div>
         </div>
-        <div className='flex  w-[50%]'></div>
+        <div className='flex w-full  md:w-[45%] mt-24'>
+          <StripeCheckout />
+        </div>
       </div>
     </section>
   )

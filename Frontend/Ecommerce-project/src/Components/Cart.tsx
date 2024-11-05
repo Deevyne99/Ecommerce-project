@@ -9,12 +9,15 @@ import { formatPrice } from '../utils'
 import { toast } from 'react-toastify'
 import { removeItem } from '../features/cart/cartslice'
 import { useEffect, useRef } from 'react'
+import { createOrder } from '../features/orders/Order'
 
 // import React from 'react'
 
 const Cart = () => {
   const { showCart } = useAppSelector((store) => store.modalSlice)
-  const { cartItems, cartTotal } = useAppSelector((store) => store.cartSlice)
+  const { cartItems, cartTotal, shipping } = useAppSelector(
+    (store) => store.cartSlice
+  )
   const { userProfile } = useAppSelector((store) => store.userSlice)
   const navigate = useNavigate()
   const modalRef = useRef<HTMLDivElement>(null)
@@ -23,6 +26,7 @@ const Cart = () => {
   const handleCheckout = () => {
     if (userProfile.user) {
       dispatch(handleShowCart())
+      dispatch(createOrder({ shipping, cartItems }))
       navigate('/checkout')
       return
     }

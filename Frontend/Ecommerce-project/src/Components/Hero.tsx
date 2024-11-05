@@ -18,7 +18,7 @@ const Hero = () => {
     if (productIndex > lastIndex) {
       setProductIndex(0)
     }
-  }, [productIndex])
+  }, [productIndex, products])
 
   useEffect(() => {
     const slider = setInterval(() => {

@@ -6,7 +6,7 @@ import { toast } from 'react-toastify'
 
 const Login = () => {
   const dispatch = useAppDispatch()
-  const { userProfile } = useAppSelector((state) => state.userSlice)
+  const { userProfile, isLoading } = useAppSelector((state) => state.userSlice)
   const [user, setUser] = useState({ email: '', password: '' })
   const navigate = useNavigate()
 
@@ -67,7 +67,7 @@ const Login = () => {
             type='submit'
             className='max-w-[400px] p-2 text-white w-full mt-6 bg-[#3b82f6]'
           >
-            Login
+            {isLoading ? 'Loading...' : 'Login'}
           </button>
         </form>
         <div className='flex flex-col text-center mt-4'>

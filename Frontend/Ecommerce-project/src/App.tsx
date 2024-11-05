@@ -12,6 +12,8 @@ import Checkout from './Pages/Checkout'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import ProtectedRoutes from './utils/ProtectedRoute'
+import { Elements } from '@stripe/react-stripe-js'
+import { stripePromise } from './utils/stripeUtils'
 
 // import Footer from './Components/Footer'
 
@@ -38,7 +40,9 @@ function App() {
               path='/checkout'
               element={
                 <ProtectedRoutes>
-                  <Checkout />
+                  <Elements stripe={stripePromise}>
+                    <Checkout />
+                  </Elements>
                 </ProtectedRoutes>
               }
             />

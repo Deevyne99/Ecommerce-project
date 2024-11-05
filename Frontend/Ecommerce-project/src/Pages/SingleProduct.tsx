@@ -59,12 +59,14 @@ const SingleProduct = () => {
   return (
     <div className='mt-24'>
       <div className='flex flex-col mx-4 md:mx-12'>
-        <Link
-          to={'/products'}
-          className='flex text-[#6b7280] items-center text-2xl gap-2'
-        >
-          <MdKeyboardBackspace />
-        </Link>
+        <button className='flex hover:bg-[#f3f4f6] w-[40px] h-[40px] justify-center items-center rounded-full'>
+          <Link
+            to={'/products'}
+            className='flex text-[#6b7280] items-center text-2xl gap-2'
+          >
+            <MdKeyboardBackspace />
+          </Link>
+        </button>
         <div className='flex gap-8 md:flex-row w-full flex-col mt-8'>
           <div className='items-start justify-center flex flex-col w-full sm:flex-row gap-4'>
             <aside className='flex flex-row  flex-wrap sm:flex-col gap-4 sm:order-1 order-2 justify-center'>
