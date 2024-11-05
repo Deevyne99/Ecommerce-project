@@ -11,7 +11,6 @@ export const formatPrice = (price: number): string => {
 
 export const customFetch = axios.create({
   baseURL: 'https://ecommerce-project-2-2n0h.onrender.com/api/v1',
-  withCredentials: true,
 })
 
 export const customFetchOrder = axios.create({
