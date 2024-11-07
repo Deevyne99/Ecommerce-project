@@ -20,6 +20,7 @@ const attachCookiesToResponse = ({ res, user }) => {
     secure: process.env.NODE_ENV === 'production',
     signed: true,
     sameSite: 'Lax',
+    domain: 'ecommerce-project-2-2n0h.onrender.com',
   })
 }
 
