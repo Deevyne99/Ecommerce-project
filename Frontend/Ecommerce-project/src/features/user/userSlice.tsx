@@ -24,6 +24,9 @@ export const loginUser = createAsyncThunk(
   async (user: LoginUserProps, thunkAPI) => {
     try {
       const { data } = await customFetch.post('/ecommerce/auth/login', user, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
         withCredentials: true,
       })
       console.log(data)
