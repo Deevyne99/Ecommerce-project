@@ -37,3 +37,14 @@ This is a fullstack e-commerce web application built using modern technologies i
    Navigate the project directory
    cd ecommerce-project
    ```
+
+   2. For the frontend
+      `cd Frontend`
+      `cd Ecommerce-project`
+      `npm install`
+      `npm run dev`
+
+   3. For the backend
+      `cd Server`
+      `npm install`
+      `npm start`
