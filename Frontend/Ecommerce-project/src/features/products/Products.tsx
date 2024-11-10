@@ -4,6 +4,7 @@ import { toast } from 'react-toastify'
 import { customFetch } from '../../utils'
 
 interface QueryParams {
+  search?: string
   page?: number
   category?: string // or string[] if there are multiple categories
   sort?: string
@@ -32,6 +33,7 @@ const initialState: ProductsProps = {
   pagesCount: 0,
   active: 1,
   category: '',
+  search: '',
 }
 // const page = 5
 
@@ -119,6 +121,9 @@ const productSlice = createSlice({
     resetCategory: (state) => {
       state.category = ''
     },
+    handleSearch: (state, { payload }) => {
+      state.search = payload
+    },
   },
 })
 
@@ -127,6 +132,7 @@ export const {
   handleActivePagination,
   handleCategory,
   resetCategory,
+  handleSearch,
 } = productSlice.actions
 
 export default productSlice.reducer

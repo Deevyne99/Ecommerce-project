@@ -4,7 +4,7 @@ import Footer from '../Components/Footer'
 import { useAppDispatch, useAppSelector } from '../hooks/hooks'
 import PaginationContainer from '../Components/PaginationContainer'
 import { HashLoader } from 'react-spinners'
-import { getAllProducts } from '../features/products/Products'
+import { getAllProducts, handleSearch } from '../features/products/Products'
 import { IoMdSearch } from 'react-icons/io'
 
 // import { getAllProducts } from '../features/products/Products'
@@ -15,10 +15,14 @@ import { IoMdSearch } from 'react-icons/io'
 
 const Products = () => {
   const dispatch = useAppDispatch()
-  const { products, loadingAllProducts, category, active } = useAppSelector(
-    (state) => state.productSlice
-  )
-  // const dispatch = useAppDispatch()
+  const { products, loadingAllProducts, category, active, search } =
+    useAppSelector((state) => state.productSlice)
+
+  //handle search
+  const handleSearchInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch(handleSearch(e.target.value))
+  }
+
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
@@ -119,8 +123,14 @@ const Products = () => {
                 type='text'
                 className='border w-full p-2 rounded-r-none rounded-md focus:#3b82f6'
                 placeholder='please enter thename of the product'
+                name='search'
+                onChange={handleSearchInput}
+                value={search}
               />
-              <button className='flex justify-center items-center bg-[#3b82f6] text-white w-[50px] p-2 rounded-r-md'>
+              <button
+                onClick={() => dispatch(getAllProducts({ search }))}
+                className='flex justify-center items-center bg-[#3b82f6] text-white w-[50px] p-2 rounded-r-md'
+              >
                 <IoMdSearch className='text-xl' />
               </button>
             </div>

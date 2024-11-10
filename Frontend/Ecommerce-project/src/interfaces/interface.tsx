@@ -91,4 +91,5 @@ export interface ProductsProps {
   pagesCount: number
   active: number
   category: string
+  search: string
 }
