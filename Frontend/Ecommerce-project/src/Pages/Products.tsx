@@ -22,6 +22,10 @@ const Products = () => {
   const handleSearchInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(handleSearch(e.target.value))
   }
+  const handleFetchData = () => {
+    dispatch(getAllProducts({ search }))
+    // dispatch(resetHandleSearch())
+  }
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -128,7 +132,7 @@ const Products = () => {
                 value={search}
               />
               <button
-                onClick={() => dispatch(getAllProducts({ search }))}
+                onClick={() => handleFetchData()}
                 className='flex justify-center items-center bg-[#3b82f6] text-white w-[50px] p-2 rounded-r-md'
               >
                 <IoMdSearch className='text-xl' />

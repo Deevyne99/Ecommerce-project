@@ -124,6 +124,9 @@ const productSlice = createSlice({
     handleSearch: (state, { payload }) => {
       state.search = payload
     },
+    resetHandleSearch: (state) => {
+      state.search = ''
+    },
   },
 })
 
@@ -133,6 +136,7 @@ export const {
   handleCategory,
   resetCategory,
   handleSearch,
+  resetHandleSearch,
 } = productSlice.actions
 
 export default productSlice.reducer

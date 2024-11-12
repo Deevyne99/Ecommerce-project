@@ -5,7 +5,7 @@ import {
   RegisterUserProps,
 } from '../../interfaces/interface'
 import { customFetch } from '../../utils'
-import { toast } from 'react-toastify'
+import { toast, ToastContainer } from 'react-toastify'
 
 const userProfile = {
   user: '',
@@ -23,14 +23,19 @@ export const loginUser = createAsyncThunk(
   'user/loginUser',
   async (user: LoginUserProps, thunkAPI) => {
     try {
-      const { data } = await customFetch.post('/ecommerce/auth/login', user, {
-        headers: {
-          'Content-Type': 'application/json',
-        },
+      const response = await customFetch.post('/ecommerce/auth/login', user, {
+        // headers: {
+        //   'Content-Type': 'application/json',
+        // },
         withCredentials: true,
       })
-      console.log(data)
-      return data
+
+      const setCookieHeader = response.headers['Set-Cookie']
+
+      // You can now store the cookie or use it for subsequent requests
+      console.log('Cookie received:', setCookieHeader)
+      // console.log(data)
+      return response.data
     } catch (error) {
       console.log(error)
       return thunkAPI.rejectWithValue(error)
