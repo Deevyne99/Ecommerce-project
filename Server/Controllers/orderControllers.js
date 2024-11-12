@@ -19,7 +19,7 @@ const calculateTotal = ({ subTotal, shippingFee }) => {
 }
 
 const createOrder = async (req, res) => {
-  const { items: cartItems, shipping: shippingFee } = req.body
+  const { items: cartItems, shipping: shippingFee, userId } = req.body
   console.log(cartItems)
 
   if (!cartItems || cartItems.length < 1) {
@@ -65,7 +65,7 @@ const createOrder = async (req, res) => {
     shippingFee,
     clientSecret: paymentIntent.client_secret,
     paymentIntentId: paymentIntent.id,
-    user: req.user.userId,
+    user: userId,
   })
 
   res
