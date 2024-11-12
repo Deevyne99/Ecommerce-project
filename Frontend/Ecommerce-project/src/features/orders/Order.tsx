@@ -16,6 +16,7 @@ interface orderProps {
   user: string
   loading: boolean
   error: string
+  userId: string
 }
 const defaultState: orderProps = {
   orderItems: [],
@@ -25,23 +26,27 @@ const defaultState: orderProps = {
   user: '',
   loading: false,
   error: '',
+  userId: '',
 }
 
 export const createOrder = createAsyncThunk(
   'orders/createOrders',
   async ({
     shipping,
-    cartItems,
+    items,
+    userId,
   }: {
     shipping: number
-    cartItems: SingleOrderProps[]
+    items: SingleOrderProps[]
+    userId: string
   }) => {
     try {
       const { data } = await customFetch.post(
         '/ecommerce/orders',
         {
           shipping,
-          cartItems,
+          items,
+          userId,
         },
         {
           headers: {

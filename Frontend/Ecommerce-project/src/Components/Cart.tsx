@@ -26,7 +26,9 @@ const Cart = () => {
   const handleCheckout = () => {
     if (userProfile.user) {
       dispatch(handleShowCart())
-      dispatch(createOrder({ shipping, cartItems }))
+      dispatch(
+        createOrder({ shipping, items: cartItems, userId: userProfile.userId })
+      )
       navigate('/checkout')
       return
     }
