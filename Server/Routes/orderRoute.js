@@ -15,7 +15,7 @@ const router = express.Router()
 router
   .route('/')
   .get(AuthenticateUser, AuthorizeUser('Admin'), getAllOrder)
-  .post(AuthenticateUser, createOrder)
+  .post(createOrder)
 
 router.route('/currentUserOrders').get(AuthenticateUser, showCurrentUserOrders)
 
