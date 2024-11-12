@@ -30,10 +30,10 @@ export const loginUser = createAsyncThunk(
         withCredentials: true,
       })
 
-      const setCookieHeader = response.headers['Set-Cookie']
+      //const setCookieHeader = response.headers['Set-Cookie']
 
       // You can now store the cookie or use it for subsequent requests
-      console.log('Cookie received:', setCookieHeader)
+      //console.log('Cookie received:', setCookieHeader)
       // console.log(data)
       return response.data
     } catch (error) {
