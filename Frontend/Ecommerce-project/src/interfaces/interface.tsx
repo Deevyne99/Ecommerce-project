@@ -92,4 +92,5 @@ export interface ProductsProps {
   active: number
   category: string
   search: string
+  price: number
 }

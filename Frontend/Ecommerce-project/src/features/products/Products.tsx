@@ -8,6 +8,7 @@ interface QueryParams {
   page?: number
   category?: string // or string[] if there are multiple categories
   sort?: string
+  price?: number
 }
 
 const initialState: ProductsProps = {
@@ -34,6 +35,7 @@ const initialState: ProductsProps = {
   active: 1,
   category: '',
   search: '',
+  price: 100,
 }
 // const page = 5
 

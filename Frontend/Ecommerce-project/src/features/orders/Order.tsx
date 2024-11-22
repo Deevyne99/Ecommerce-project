@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { customFetch } from '../../utils'
+// import { toast } from 'react-toastify'
 
 interface SingleOrderProps {
   name: string
@@ -12,7 +13,7 @@ interface orderProps {
   orderItems: SingleOrderProps[]
   total: number
   shippingFee: number
-  clientSecret: string
+  clientSecret?: string
   user: string
   loading: boolean
   error: string
@@ -81,8 +82,10 @@ const orderSlice = createSlice({
     builder.addCase(createOrder.pending, (state) => {
       state.loading = true
     })
-    builder.addCase(createOrder.fulfilled, (state) => {
+    builder.addCase(createOrder.fulfilled, (state, { payload }) => {
       state.loading = false
+      state.orderItems = payload.order
+      state.clientSecret = `${payload.clientSecret}`
     })
     builder.addCase(createOrder.rejected, (state) => {
       state.loading = false
