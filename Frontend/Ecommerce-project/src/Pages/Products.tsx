@@ -14,6 +14,7 @@ import { IoMdSearch } from 'react-icons/io'
 
 // import React from 'react'
 type Category = 'Shirts' | 'Trousers' | 'Shoes' | 'Bags' | 'Jackets'
+type Sort = 'oldest' | 'latest' | 'a-z' | 'z-a'
 const Products = () => {
   const dispatch = useAppDispatch()
 
@@ -22,13 +23,20 @@ const Products = () => {
   const { products, loadingAllProducts, category, active, search } =
     useAppSelector((state) => state.productSlice)
   const productCategory = ['shirts', 'trousers', 'shoes', 'bags', 'jackets']
+  const productSort = ['latest', 'oldest', 'a-z', 'z-a']
 
   const [selectedCategories, setSelectedCategories] = useState<Category>()
+  const [selectedSort, setSelectedSort] = useState<Sort>()
   // handle category
 
   const handleProductsCategory = (category: Category) => {
     setSelectedCategories(category)
     dispatch(getAllProducts({ category }))
+  }
+
+  const handleSelectedSort = (sort: Sort) => {
+    setSelectedSort(sort)
+    dispatch(getAllProducts({ sort: sort }))
   }
 
   // handle price Range
@@ -93,7 +101,27 @@ const Products = () => {
                 </div>
               )
             })}
-
+            <h3>Sort</h3>
+            {productSort.map((item: string, index: number) => {
+              return (
+                <div key={index} className='flex gap-3 items-center'>
+                  <input
+                    className='hover:cursor-pointer'
+                    onChange={() => handleSelectedSort(item as Sort)}
+                    type='checkbox'
+                    name={item}
+                    id=''
+                    checked={selectedSort === item}
+                  />
+                  <label
+                    className='text-sm text-[#6b7280] capitalize'
+                    htmlFor='Pending'
+                  >
+                    {item}
+                  </label>
+                </div>
+              )
+            })}
             {/* <div className='flex flex-col gap-2'>
               <h3 className='capitalize text-sm text-[#6b7280] font-semibold'>
                 Prices
