@@ -21,7 +21,7 @@ const getAllProducts = async (req, res) => {
   }
   let product = Products.find(queryObject).populate('reviews')
   if (sort === 'latest') {
-    product = result.sort('-createdBt')
+    product = product.sort('-createdBt')
   }
   if (sort === 'oldest') {
     product = product.sort('createAt')
