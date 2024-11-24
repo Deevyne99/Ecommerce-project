@@ -26,7 +26,7 @@ const Navbar = () => {
           <div className='flex flex-col mx-4 md:mx-8 py-4'>
             <div className='flex justify-between mt-1'>
               <div className=''>
-                <h1>Logo</h1>
+                <h1 className='md:text-2xl text-xl'>Dee Store</h1>
               </div>
               <nav>
                 <ul className='md:flex gap-4 items-center hidden capitalize text-[#1c0f0f]'>

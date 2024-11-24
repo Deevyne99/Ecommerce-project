@@ -61,3 +61,16 @@ This project is a fullstack e-commerce web application that allows users to expl
    `npm install`
    **Run the code**
    `npm run dev`
+
+3. **Navigate to Frontend**
+   `cd Server`
+
+   **Install Dependencies**
+   `npm install`
+   **Run the code**
+   `npm start`
+
+   **API DOCUMENTATION**
+   <a href="https://ecommerce-project-2-2n0h.onrender.com"
+
+   > Api Docs</a>

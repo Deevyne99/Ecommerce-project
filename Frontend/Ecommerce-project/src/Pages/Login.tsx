@@ -30,7 +30,7 @@ const Login = () => {
     <div>
       <div className='flex flex-col mx-4 md:mx-12 mt-12'>
         <Link to={'/'} className='text-2xl'>
-          Divine store
+          Dee store
         </Link>
         <div className='flex gap-4 flex-col justify-center items-center '>
           <h3 className='text-xl '>
