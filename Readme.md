@@ -74,3 +74,7 @@ This project is a fullstack e-commerce web application that allows users to expl
    <a href="https://ecommerce-project-2-2n0h.onrender.com"
 
    > Api Docs</a>
+
+   **Sample Image**
+   <img src='./Frontend/Ecommerce-project/src/assets/Screenshot 2024-11-24 at 14-33-41 Vite React TS.png'/>
+   <img src='./Frontend/Ecommerce-project/src/assets/Screenshot 2024-11-24 at 14-34-20 Vite React TS.png'/>
