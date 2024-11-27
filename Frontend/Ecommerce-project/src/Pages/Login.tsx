@@ -79,7 +79,10 @@ const Login = () => {
         <div className='flex flex-col text-center mt-4'>
           <p className=''>
             Register
-            <Link to='/register'> Here</Link>{' '}
+            <Link className='text-[#3b82f6]' to='/register'>
+              {' '}
+              Here
+            </Link>{' '}
           </p>
         </div>
       </div>

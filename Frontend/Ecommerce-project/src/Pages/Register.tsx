@@ -1,10 +1,12 @@
 import { useState, ChangeEvent, FormEvent } from 'react'
 import { Link } from 'react-router-dom'
 import { toast } from 'react-toastify'
-import { useAppDispatch } from '../hooks/hooks'
+import { useAppDispatch, useAppSelector } from '../hooks/hooks'
 import { RegisterUser } from '../features/user/userSlice'
 
 const Register = () => {
+  const { isError, isLoading } = useAppSelector((state) => state.userSlice)
+  // const navigate = useNavigate()
   const [user, setUser] = useState({
     name: '',
     email: '',
@@ -24,8 +26,13 @@ const Register = () => {
       toast.error('Please fill all inputs')
       return
     }
+    if (isError) {
+      toast.error('Something went wrong')
+      return
+    }
     dispatch(RegisterUser(user))
-    toast.success('data sent successfully')
+    // navigate('/login')
+    // toast.success('data sent successfully')
   }
   return (
     <div className='flex flex-col mx-4 md:mx-12 mt-12'>
@@ -77,13 +84,16 @@ const Register = () => {
             type='submit'
             className='max-w-[400px] p-2 text-white w-full mt-6 bg-[#3b82f6]'
           >
-            Register
+            {isLoading ? 'Loading...' : 'Register'}
           </button>
         </form>
       </div>
       <div className='flex flex-col text-center mt-4'>
         <p className=''>
-          Already have an account? login <Link to='/login'>Here</Link>{' '}
+          Already have an account? login{' '}
+          <Link className='text-[#3b82f6]' to='/login'>
+            Here
+          </Link>{' '}
         </p>
       </div>
     </div>

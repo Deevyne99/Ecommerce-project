@@ -27,7 +27,7 @@ export const loginUser = createAsyncThunk(
         // headers: {
         //   'Content-Type': 'application/json',
         // },
-        withCredentials: true,
+        // withCredentials: true,
       })
 
       //const setCookieHeader = response.headers['Set-Cookie']
@@ -88,6 +88,21 @@ const userSlice = createSlice({
       state.isError = true
     })
     builder.addCase(logoutUser.pending, (state) => {
+      state.isLoading = true
+    })
+    builder.addCase(RegisterUser.fulfilled, (state) => {
+      // const { tokenUser } = payload
+      // console.log(payload.tokenUser)
+
+      state.isLoading = false
+      toast.success(`Registration Successful please login`)
+      state.isError = false
+      // state.userProfile = tokenUser
+    })
+    builder.addCase(RegisterUser.rejected, (state) => {
+      state.isError = true
+    })
+    builder.addCase(RegisterUser.pending, (state) => {
       state.isLoading = true
     })
     builder.addCase(logoutUser.fulfilled, (state) => {

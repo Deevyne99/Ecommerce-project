@@ -146,7 +146,7 @@ const Products = () => {
               <input
                 type='text'
                 className='border w-full p-2 rounded-r-none rounded-md focus:#3b82f6'
-                placeholder='please enter thename of the product'
+                placeholder='search'
                 name='search'
                 onChange={handleSearchInput}
                 value={search}
