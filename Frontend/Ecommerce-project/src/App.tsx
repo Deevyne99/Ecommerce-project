@@ -14,6 +14,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import ProtectedRoutes from './utils/ProtectedRoute'
 import { Elements } from '@stripe/react-stripe-js'
 import { stripePromise } from './utils/stripeUtils'
+import Error from './Pages/Error'
 
 // import Footer from './Components/Footer'
 
@@ -52,6 +53,7 @@ function App() {
           <Route path='/register' element={<Register />} />
           <Route path='/login' element={<Login />} />
           <Route path='/forgotPassword' element={<ForgotPassword />} />
+          <Route path='*' element={<Error />} />
         </Routes>
         <ToastContainer />
       </BrowserRouter>

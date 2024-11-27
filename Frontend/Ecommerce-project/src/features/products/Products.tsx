@@ -43,7 +43,9 @@ export const getAllProducts = createAsyncThunk(
   'products/getAllProducts',
   async (params: QueryParams) => {
     try {
-      const queryString = new URLSearchParams(params as string).toString()
+      const queryString = new URLSearchParams(
+        params as unknown as string
+      ).toString()
       const { data } = await customFetch.get(
         `/ecommerce/products?${queryString}`
       )
