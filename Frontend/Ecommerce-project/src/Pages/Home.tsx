@@ -19,11 +19,11 @@ const Home = () => {
   const { loadingAllProducts, products } = useAppSelector(
     (state) => state.productSlice
   )
-  const [page, setPage] = useState(4)
-  const [categoryPage, setCategoryPage] = useState(3)
+  const [page] = useState(4)
+  const [categoryPage] = useState(3)
   const [features, setfeatures] = useState([])
   const [categories, setCategories] = useState([])
-  const [pageNum, setPageNum] = useState(0)
+  const [pageNum] = useState(0)
 
   useEffect(() => {
     dispatch(resetProducts())

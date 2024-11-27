@@ -5,7 +5,7 @@ import {
   RegisterUserProps,
 } from '../../interfaces/interface'
 import { customFetch } from '../../utils'
-import { toast, ToastContainer } from 'react-toastify'
+import { toast } from 'react-toastify'
 
 const userProfile = {
   user: '',
