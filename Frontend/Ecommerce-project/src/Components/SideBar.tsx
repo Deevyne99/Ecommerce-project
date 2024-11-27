@@ -63,9 +63,9 @@ const SideBar = () => {
             >
               Products
             </Link>
-            <Link onClick={() => dispatch(handleShowSideBar())} to={'orders'}>
+            {/* <Link onClick={() => dispatch(handleShowSideBar())} to={'orders'}>
               orders
-            </Link>
+            </Link> */}
           </ul>
         </nav>
         <nav className='flex gap-4 mt-4 flex-col text-[#1c0f0f]'>

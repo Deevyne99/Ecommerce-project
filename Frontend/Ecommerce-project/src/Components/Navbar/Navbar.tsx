@@ -33,7 +33,7 @@ const Navbar = () => {
                   <Link to={'/'}>Home</Link>
                   <Link to={'/about'}>about</Link>
                   <Link to={'/products'}>Products</Link>
-                  <Link to={'orders'}>orders</Link>
+                  {/* <Link to={'orders'}>orders</Link> */}
                 </ul>
               </nav>
               <nav className='md:flex gap-8 hidden items-center justify-center'>
